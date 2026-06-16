@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-15T00:00:00.000Z",
+  "title": "Design System: Buckeye Web Co.",
+  "extensions": {
+    "colorMeta": {
+      "pine": { "role": "primary", "displayName": "Deep Pine", "canonical": "#1f5f3f", "tonalRamp": ["#0c2419", "#143f29", "#1f5f3f", "#2d7a52", "#4a9971", "#7bbb9a", "#b6dac8", "#e6f3ec"] },
+      "pine-deep": { "role": "primary-hover", "displayName": "Pine Deep", "canonical": "#143f29", "tonalRamp": ["#06150d", "#0c2419", "#143f29", "#1f5f3f", "#2d7a52", "#4a9971", "#7bbb9a", "#cce5da"] },
+      "fresh-cut": { "role": "primary-light", "displayName": "Fresh Cut", "canonical": "#2d7a52", "tonalRamp": ["#0f2e1f", "#1a4a32", "#2d7a52", "#3f9a6c", "#5fb888", "#8fd0ac", "#c2e8d4", "#eaf8f0"] },
+      "marigold": { "role": "secondary", "displayName": "Marigold", "canonical": "#f2a93b", "tonalRamp": ["#5c3c0d", "#8a5a14", "#c1801f", "#f2a93b", "#f6c06b", "#fad79a", "#fdebcc", "#fef7ea"] },
+      "dusk-navy": { "role": "tertiary", "displayName": "Dusk Navy", "canonical": "#1c2b3a", "tonalRamp": ["#070b0f", "#0e161e", "#1c2b3a", "#324a61", "#4f6c87", "#8198ab", "#b9c7d3", "#e4eaef"] },
+      "charcoal": { "role": "neutral-text", "displayName": "Charcoal", "canonical": "#2a2f33", "tonalRamp": ["#0e1011", "#1a1d1f", "#2a2f33", "#454c52", "#6b757d", "#9aa3aa", "#cbd1d5", "#eef0f1"] },
+      "stone": { "role": "neutral-muted", "displayName": "Stone", "canonical": "#6b7280", "tonalRamp": ["#26282d", "#3f434b", "#6b7280", "#8b919c", "#aab0b9", "#c7ccd2", "#e1e4e8", "#f3f4f6"] },
+      "morning-mist": { "role": "neutral-bg", "displayName": "Morning Mist", "canonical": "#f6f8f6", "tonalRamp": ["#1c201d", "#3a423c", "#5c675f", "#90a097", "#c2cdc6", "#e2e9e3", "#f6f8f6", "#ffffff"] },
+      "hairline-sage": { "role": "neutral-border", "displayName": "Hairline Sage", "canonical": "#e3e8e4", "tonalRamp": ["#2a2f2c", "#4d564f", "#7c8780", "#aab5ad", "#cdd5cf", "#e3e8e4", "#f1f4f1", "#fbfcfb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero h1 only — the single boldest statement on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2 headings." },
+      "title": { "displayName": "Title", "purpose": "Card and step h3 titles." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, descriptions, FAQ answers." },
+      "label": { "displayName": "Label", "purpose": "Hero eyebrow only — not repeated on other sections." }
+    },
+    "shadows": [
+      { "name": "ambient-sm", "value": "0 2px 8px rgba(28, 43, 58, 0.06)", "purpose": "Resting state for cards, mockup tiles, scrolled header." },
+      { "name": "ambient-md", "value": "0 8px 24px rgba(28, 43, 58, 0.08)", "purpose": "Hover state for cards, FAQ items, hero badge." },
+      { "name": "ambient-lg", "value": "0 20px 60px rgba(28, 43, 58, 0.15)", "purpose": "Hero mockup frame — the page's focal point." },
+      { "name": "pine-glow", "value": "0 4px 14px rgba(31, 95, 63, 0.25)", "purpose": "Primary button resting shadow, tinted with brand color." },
+      { "name": "pine-glow-hover", "value": "0 8px 20px rgba(31, 95, 63, 0.32)", "purpose": "Primary button hover shadow." },
+      { "name": "marigold-glow", "value": "0 6px 16px rgba(242, 169, 59, 0.3)", "purpose": "Mockup CTA element only." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for hover, scroll-reveal, and transition states." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA button — 'Get my free mockup' / 'Book a free call'.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Get My Free Mockup</a>",
+      "css": ".ds-btn-primary { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; background: #1f5f3f; color: #ffffff; box-shadow: 0 4px 14px rgba(31, 95, 63, 0.25); transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #143f29; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(31, 95, 63, 0.32); } .ds-btn-primary:focus-visible { outline: 2px solid #1f5f3f; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary CTA — used alongside the primary button (e.g. 'See pricing').",
+      "html": "<a href=\"#\" class=\"ds-btn-outline\">See Pricing</a>",
+      "css": ".ds-btn-outline { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; background: transparent; color: #1f5f3f; border: 2px solid #1f5f3f; transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1), background 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-outline:hover { background: #1f5f3f; color: #ffffff; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(31, 95, 63, 0.18); } .ds-btn-outline:focus-visible { outline: 2px solid #1f5f3f; outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Solution Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Capability card with icon tile, title, and description.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-icon-tile\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z\"/></svg></div><h3>Built To Convert</h3><p>A fast, mobile-first site designed to turn visitors into booked jobs.</p></div>",
+      "css": ".ds-card { background: #ffffff; border: 1px solid #e3e8e4; border-radius: 12px; padding: 32px; text-align: center; transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1); } .ds-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(28, 43, 58, 0.08); border-color: transparent; } .ds-icon-tile { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border-radius: 16px; background: #f6f8f6; color: #1f5f3f; } .ds-card h3 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: 12px; color: #1c2b3a; } .ds-card p { color: #6b7280; margin: 0; }"
+    },
+    {
+      "name": "Featured Pricing Card",
+      "kind": "card",
+      "refersTo": "card-featured",
+      "description": "The highlighted (most popular) pricing tier — permanently elevated with a pine-tinted gradient.",
+      "html": "<div class=\"ds-card-featured\"><span class=\"ds-badge\">Most Popular</span><h3>Growth</h3><p class=\"ds-price\">$147</p><p>Everything in Starter, plus local SEO setup and a contact form.</p><a href=\"#\" class=\"ds-btn-primary\">Get My Free Mockup</a></div>",
+      "css": ".ds-card-featured { border: 1px solid #1f5f3f; border-radius: 12px; padding: 32px; text-align: center; display: flex; flex-direction: column; gap: 12px; position: relative; background: linear-gradient(180deg, rgba(31, 95, 63, 0.04), #ffffff 40%); box-shadow: 0 12px 40px rgba(31, 95, 63, 0.12); transform: translateY(-8px); transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1); } .ds-card-featured:hover { transform: translateY(-12px); box-shadow: 0 18px 48px rgba(31, 95, 63, 0.18); } .ds-card-featured h3 { font-family: 'Poppins', sans-serif; font-size: 1.25rem; color: #1c2b3a; } .ds-price { font-size: 1.5rem; font-weight: 700; color: #1f5f3f; margin: 0; } .ds-card-featured p:not(.ds-price) { color: #6b7280; flex-grow: 1; margin: 0; } .ds-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #f2a93b; color: #ffffff; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 14px; border-radius: 999px; } .ds-btn-primary { margin-top: auto; display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; background: #1f5f3f; color: #ffffff; box-shadow: 0 4px 14px rgba(31, 95, 63, 0.25); }"
+    },
+    {
+      "name": "Stat Callout",
+      "kind": "custom",
+      "description": "Horizontal stat highlight with icon tile — replaces the side-stripe callout pattern.",
+      "html": "<div class=\"ds-stat-callout\"><div class=\"ds-stat-icon\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 3v18h18\"/><path d=\"M18.7 8 12 14.7l-3-3L3 17\"/></svg></div><span>73% of customers check a business's website before calling.</span></div>",
+      "css": ".ds-stat-callout { margin-top: 24px; background: #f6f8f6; padding: 18px 22px; font-weight: 600; color: #1c2b3a; border-radius: 10px; text-align: left; display: flex; align-items: center; gap: 14px; } .ds-stat-icon { flex-shrink: 0; color: #1f5f3f; background: #ffffff; border-radius: 50%; padding: 8px; display: flex; box-shadow: 0 2px 8px rgba(28, 43, 58, 0.06); }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "description": "Sticky header with blur backdrop, logo, links, and CTA. Gains shadow on scroll.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-inner\"><a href=\"#\" class=\"ds-logo\">Buckeye Web Co.</a><nav class=\"ds-nav-links\"><a href=\"#\">Pricing</a><a href=\"#\">Process</a><a href=\"#\">FAQ</a></nav><a href=\"#\" class=\"ds-btn-primary\">Get My Free Mockup</a></div></header>",
+      "css": ".ds-header { background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid #e3e8e4; } .ds-header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; } .ds-logo { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; color: #1f5f3f; text-decoration: none; } .ds-nav-links { display: flex; gap: 32px; } .ds-nav-links a { color: #2a2f33; text-decoration: none; font-weight: 500; transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-links a:hover { color: #1f5f3f; } .ds-nav-links a:focus-visible, .ds-logo:focus-visible { outline: 2px solid #1f5f3f; outline-offset: 3px; border-radius: 4px; } .ds-btn-primary { display: inline-block; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; background: #1f5f3f; color: #ffffff; box-shadow: 0 4px 14px rgba(31, 95, 63, 0.25); }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "description": "Collapsible FAQ entry with +/- indicator.",
+      "html": "<details class=\"ds-faq-item\"><summary>Do I need to manage anything on my Google account?</summary><p>No — everything runs on our infrastructure. You never have to log into or change anything on your Google Business account.</p></details>",
+      "css": ".ds-faq-item { background: #ffffff; border: 1px solid #e3e8e4; border-radius: 8px; padding: 16px 20px; transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1); } .ds-faq-item:hover { border-color: #1f5f3f; box-shadow: 0 2px 8px rgba(28, 43, 58, 0.06); } .ds-faq-item summary { font-weight: 600; cursor: pointer; list-style: none; position: relative; padding-right: 24px; color: #2a2f33; } .ds-faq-item summary::-webkit-details-marker { display: none; } .ds-faq-item summary::after { content: '+'; position: absolute; right: 0; top: 0; font-size: 1.25rem; color: #1f5f3f; } .ds-faq-item[open] summary::after { content: '\\2212'; } .ds-faq-item p { margin-top: 12px; color: #6b7280; } .ds-faq-item summary:focus-visible { outline: 2px solid #1f5f3f; outline-offset: 3px; border-radius: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Trusted Local Crew",
+    "overview": "Buckeye Web Co. should feel like the work of a small, sharp local outfit — the kind of operator a landscaping business owner already trusts to show up, do clean work, and not waste their time. The system pairs confident, generously-spaced Poppins headlines with calm Inter body text, set against soft sage-tinted neutrals and a single deep pine green that carries the brand. Pops of marigold orange mark the one thing that matters on any given screen: the call to action. This system explicitly rejects the generic AI/SaaS-startup look: no cream or beige 'parchment' backgrounds, no gradient text, no tiny uppercase tracked eyebrows stacked above every section, no identical three-card grids repeated section after section, no colored side-stripe borders on callouts, and no stock hero-metric templates. Every section should read as deliberately composed for this business, not assembled from a template library.",
+    "keyCharacteristics": [
+      "Deep pine green as the singular brand color, used sparingly and with intent",
+      "Soft sage-neutral backgrounds (morning mist) alternating with white to create rhythm without borders",
+      "Poppins for headlines (confident, geometric, slightly rounded), Inter for body (calm, legible)",
+      "Layered, soft shadows rather than hard borders to convey depth",
+      "Marigold orange reserved almost exclusively for primary CTAs and key accents"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Marigold (#f2a93b) appears in at most 2-3 places per page. If a page has more than one marigold element competing for attention, remove one.", "section": "colors" },
+      { "name": "The One Eyebrow Rule", "body": "Uppercase tracked labels are a hero-only device. No other section gets one — repeating it everywhere is the generic-template tell this system explicitly avoids.", "section": "typography" },
+      { "name": "The Lift-on-Hover Rule", "body": "Every interactive card or button increases its shadow depth and translates up 2-6px on hover/focus. A static card with no hover state feels unfinished in this system.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternate section backgrounds between white and morning-mist (#f6f8f6) to create rhythm without adding borders or dividers.",
+      "Do vary section layout structure — grids, horizontal splits, centered single-column, stat callouts — so no two consecutive sections share the same shape (per PRODUCT.md Design Principle 3: \"Vary section rhythm\").",
+      "Do use marigold (#f2a93b) only for the hero badge, mockup CTA, and pricing \"most popular\" badge — 2-3 instances per page maximum.",
+      "Do give every interactive element (cards, buttons, FAQ items, nav links) a hover and :focus-visible state with a 2px pine outline.",
+      "Do use inline SVG icons (wrench, shield, chart, star, checkmark) at 24px in pine or white — never emoji.",
+      "Do respect prefers-reduced-motion: scroll-reveal, float, and hover-lift animations must have a reduced/instant alternative."
+    ],
+    "donts": [
+      "Don't use cream, beige, or parchment body backgrounds — the neutral palette is sage-tinted white/morning-mist only.",
+      "Don't use gradient text anywhere, including headings or stat numbers.",
+      "Don't stack a tiny uppercase tracked \"eyebrow\" label above every section — it's a hero-only device (The One Eyebrow Rule).",
+      "Don't repeat an identical three-card grid in consecutive sections (e.g., Solution → Pricing → Process all as 3-up grids back to back). Each section earns its own structure.",
+      "Don't use a colored left-border stripe on callouts — the stat callout uses an icon tile + flex row instead.",
+      "Don't use stock \"hero metric\" templates (giant number + label in a box) — outcomes should be shown through copy and the mockup visual, not a metrics dashboard aesthetic.",
+      "Don't use any border heavier than 1px, or any border color other than hairline sage (#e3e8e4) or pine (#1f5f3f) for featured/hover states."
+    ]
+  }
+}
