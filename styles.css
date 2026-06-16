@@ -273,27 +273,6 @@ button:focus-visible,
   font-weight: 500;
 }
 .nav-links a:hover { color: var(--color-primary); }
-.nav-links a.nav-buy {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 0.88rem;
-  background: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
-  border-radius: 20px;
-  padding: 6px 16px;
-  box-shadow: 0 3px 10px rgba(31, 95, 63, 0.28);
-  transition: background 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
-}
-.nav-links a.nav-buy:hover {
-  background: var(--color-primary-dark);
-  border-color: var(--color-primary-dark);
-  box-shadow: 0 6px 18px rgba(31, 95, 63, 0.38);
-  transform: translateY(-1px);
-  color: #fff;
-}
 .nav-cta { white-space: nowrap; }
 .nav-toggle {
   display: none;
