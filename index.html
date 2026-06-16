@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="styles.css" />
   <!-- Calendly scheduling widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232d7a52'/%3E%3Cstop offset='1' stop-color='%23143f29'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Cpath d='M8 54 L32 14 L56 54 Z' fill='rgba(255,255,255,0.18)'/%3E%3Cpath d='M32 14 L20 34 L8 54 Z' fill='rgba(255,255,255,0.75)'/%3E%3Cpath d='M32 14 L44 34 L56 54 Z' fill='rgba(255,255,255,0.5)'/%3E%3Cpath d='M32 14 L38 26 L26 26 Z' fill='white'/%3E%3Ccircle cx='32' cy='14' r='4' fill='%23f2a93b'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='64' y2='64' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232a7050'/%3E%3Cstop offset='1' stop-color='%230a1c11'/%3E%3C/linearGradient%3E%3ClinearGradient id='cf' x1='0' y1='28' x2='0' y2='52' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232d7a52' stop-opacity='0.5'/%3E%3Cstop offset='1' stop-color='%232d7a52' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23bg)'/%3E%3Crect x='0' y='0' width='64' height='2' rx='1' fill='rgba(255,255,255,0.15)'/%3E%3Crect x='8' y='11' width='48' height='42' rx='6' fill='rgba(0,0,0,0.32)' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3Crect x='8' y='11' width='48' height='14' rx='6' fill='rgba(0,0,0,0.2)'/%3E%3Crect x='8' y='19' width='48' height='6' fill='rgba(0,0,0,0.2)'/%3E%3Cline x1='9' y1='25' x2='55' y2='25' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e05252' opacity='0.9'/%3E%3Ccircle cx='24' cy='18' r='2.5' fill='%23e0b352' opacity='0.9'/%3E%3Ccircle cx='32' cy='18' r='2.5' fill='%2352b96a' opacity='0.9'/%3E%3Cpolyline points='11,48 20,39 29,43 40,33 53,24' stroke='%232d7a52' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M11,48 L20,39 L29,43 L40,33 L53,24 L53,48 Z' fill='url(%23cf)'/%3E%3Ccircle cx='53' cy='24' r='3.5' fill='%23f2a93b'/%3E%3Cpolyline points='49,21 53,17 57,21' stroke='%23f2a93b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
 </head>
 <body>
 
@@ -21,19 +21,38 @@
       <a href="#" class="logo">
           <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
-              <linearGradient id="logo-g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#2d7a52"/>
-                <stop offset="1" stop-color="#143f29"/>
+              <linearGradient id="logo-g" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#2a7050"/>
+                <stop offset="1" stop-color="#0a1c11"/>
+              </linearGradient>
+              <linearGradient id="logo-cf" x1="0" y1="19" x2="0" y2="33" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#2d7a52" stop-opacity="0.45"/>
+                <stop offset="1" stop-color="#2d7a52" stop-opacity="0"/>
               </linearGradient>
             </defs>
+            <!-- Background -->
             <rect width="44" height="44" rx="10" fill="url(#logo-g)"/>
-            <path d="M6 37 L22 11 L38 37 Z" fill="rgba(255,255,255,0.18)"/>
-            <path d="M22 11 L14 24 L6 37 Z" fill="rgba(255,255,255,0.8)"/>
-            <path d="M22 11 L30 24 L38 37 Z" fill="rgba(255,255,255,0.5)"/>
-            <path d="M22 11 L26 18 L18 18 Z" fill="white"/>
-            <circle cx="22" cy="11" r="2.8" fill="#f2a93b"/>
-            <line x1="10" y1="30" x2="34" y2="30" stroke="rgba(255,255,255,0.2)" stroke-width="0.7"/>
-            <line x1="13" y1="24" x2="31" y2="24" stroke="rgba(255,255,255,0.15)" stroke-width="0.6"/>
+            <!-- Top highlight for depth -->
+            <rect x="0" y="0" width="44" height="1.5" rx="1" fill="rgba(255,255,255,0.14)"/>
+            <!-- Browser window -->
+            <rect x="5" y="7" width="34" height="30" rx="4.5" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+            <!-- Chrome bar -->
+            <rect x="5" y="7" width="34" height="10" rx="4.5" fill="rgba(0,0,0,0.22)"/>
+            <rect x="5" y="12" width="34" height="5" fill="rgba(0,0,0,0.22)"/>
+            <!-- Separator -->
+            <line x1="6" y1="17" x2="38" y2="17" stroke="rgba(255,255,255,0.07)" stroke-width="0.6"/>
+            <!-- Traffic lights -->
+            <circle cx="10.5" cy="12" r="1.6" fill="#e05252" opacity="0.9"/>
+            <circle cx="15.5" cy="12" r="1.6" fill="#e0b352" opacity="0.9"/>
+            <circle cx="20.5" cy="12" r="1.6" fill="#52b96a" opacity="0.9"/>
+            <!-- Rising chart line -->
+            <polyline points="8,32 13,27 19,29.5 25.5,23 34,18" stroke="#2d7a52" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Chart area fill -->
+            <path d="M8,32 L13,27 L19,29.5 L25.5,23 L34,18 L34,32 Z" fill="url(#logo-cf)"/>
+            <!-- Peak dot (amber) -->
+            <circle cx="34" cy="18" r="2.3" fill="#f2a93b"/>
+            <!-- Up-arrow above peak -->
+            <polyline points="32,15.5 34,13 36,15.5" stroke="#f2a93b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           </svg>
           Summit Webs
         </a>
@@ -309,7 +328,7 @@
             <li>Free mockup before you commit</li>
             <li>Live in ~1 week</li>
           </ul>
-          <a href="#contact" class="btn btn-outline">Get Started</a>
+          <a href="buy.html" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card featured">
           <div class="badge">Most Popular</div>
@@ -326,7 +345,7 @@
             <li>Free mockup before you commit</li>
             <li>Live in 1–2 weeks</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">Get Started</a>
+          <a href="buy.html" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card">
           <h3>Premium</h3>
@@ -341,7 +360,7 @@
             <li>Free mockup before you commit</li>
             <li>Live in ~2 weeks</li>
           </ul>
-          <a href="#contact" class="btn btn-outline">Get Started</a>
+          <a href="buy.html" class="btn btn-outline">Get Started</a>
         </div>
       </div>
 
