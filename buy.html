@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started | Summit Webs — Websites for Landscaping Businesses</title>
+  <meta name="description" content="Choose your Summit Webs package and get your landscaping website built and live in 14 days. Free mockup first — see it before you pay." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='64' y2='64' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232a7050'/%3E%3Cstop offset='1' stop-color='%230a1c11'/%3E%3C/linearGradient%3E%3ClinearGradient id='cf' x1='0' y1='28' x2='0' y2='52' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232d7a52' stop-opacity='0.5'/%3E%3Cstop offset='1' stop-color='%232d7a52' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23bg)'/%3E%3Crect x='8' y='11' width='48' height='42' rx='6' fill='rgba(0,0,0,0.32)' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3Crect x='8' y='11' width='48' height='14' rx='6' fill='rgba(0,0,0,0.2)'/%3E%3Crect x='8' y='19' width='48' height='6' fill='rgba(0,0,0,0.2)'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e05252' opacity='0.9'/%3E%3Ccircle cx='24' cy='18' r='2.5' fill='%23e0b352' opacity='0.9'/%3E%3Ccircle cx='32' cy='18' r='2.5' fill='%2352b96a' opacity='0.9'/%3E%3Cpolyline points='11,48 20,39 29,43 40,33 53,24' stroke='%232d7a52' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M11,48 L20,39 L29,43 L40,33 L53,24 L53,48 Z' fill='url(%23cf)'/%3E%3Ccircle cx='53' cy='24' r='3.5' fill='%23f2a93b'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --green:       #1f5f3f;
+      --green-l:     #2d7a52;
+      --green-d:     #143f29;
+      --amber:       #f2a93b;
+      --navy:        #0c1922;
+      --navy-2:      #111f2c;
+      --navy-3:      #172435;
+      --text:        #e4ecea;
+      --text-muted:  #8aa49a;
+      --border:      rgba(45,122,82,0.18);
+      --border-card: rgba(255,255,255,0.07);
+      --font-h:      'Poppins', sans-serif;
+      --font-b:      'Inter', sans-serif;
+      --ease:        cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: var(--font-b);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .buy-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(12,25,34,0.96);
+      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .buy-nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: #fff;
+      font-family: var(--font-h); font-weight: 700; font-size: 1.05rem;
+    }
+    .buy-nav-logo svg { width: 34px; height: 34px; }
+    .buy-nav-back {
+      font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+      display: flex; align-items: center; gap: 6px;
+      transition: color 0.2s;
+    }
+    .buy-nav-back:hover { color: var(--text); }
+    .buy-nav-talk {
+      font-size: 0.85rem; color: var(--green-l); text-decoration: none;
+      border: 1px solid var(--green-l); border-radius: 20px;
+      padding: 6px 16px; transition: all 0.2s var(--ease);
+    }
+    .buy-nav-talk:hover { background: var(--green-l); color: #fff; }
+
+    /* ── HERO ── */
+    .buy-hero {
+      text-align: center;
+      padding: 72px 24px 48px;
+      position: relative;
+    }
+    .buy-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(45,122,82,0.12), transparent);
+      pointer-events: none;
+    }
+    .buy-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(45,122,82,0.15);
+      border: 1px solid rgba(45,122,82,0.35);
+      color: #6ecf9a; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
+    }
+    .buy-kicker::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #6ecf9a; }
+    .buy-hero h1 {
+      font-family: var(--font-h); font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px;
+    }
+    .buy-hero h1 span { color: var(--green-l); }
+    .buy-hero-sub {
+      color: var(--text-muted); font-size: 1.05rem; max-width: 560px; margin: 0 auto 40px;
+    }
+    .buy-steps {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+    .buy-step {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.88rem; color: var(--text-muted);
+    }
+    .buy-step-num {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--green-l); color: #fff;
+      font-size: 0.72rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .buy-step-arrow { color: rgba(255,255,255,0.2); font-size: 0.9rem; }
+
+    /* ── LAYOUT ── */
+    .buy-main {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .buy-main { grid-template-columns: 1fr; }
+    }
+
+    /* ── SECTION LABELS ── */
+    .buy-section-label {
+      font-family: var(--font-h); font-weight: 700; font-size: 1.05rem;
+      color: #fff; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .buy-section-label span {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--green-l); color: #fff;
+      font-size: 0.8rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── PLAN CARDS (selectable radio) ── */
+    .plan-grid { display: grid; gap: 12px; margin-bottom: 32px; }
+    .plan-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .plan-grid-3-care { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 680px) {
+      .plan-grid-3, .plan-grid-3-care { grid-template-columns: 1fr; }
+    }
+
+    .plan-option { position: relative; }
+    .plan-option input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .plan-card {
+      display: block; cursor: pointer;
+      background: var(--navy-2);
+      border: 2px solid var(--border-card);
+      border-radius: 14px; padding: 22px 20px;
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+      position: relative; overflow: hidden;
+      user-select: none;
+    }
+    .plan-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: transparent;
+      transition: background 0.2s;
+      border-radius: 14px 14px 0 0;
+    }
+    .plan-option input:checked + .plan-card {
+      border-color: var(--green-l);
+      box-shadow: 0 0 0 1px var(--green-l), 0 8px 24px rgba(45,122,82,0.2);
+      transform: translateY(-2px);
+    }
+    .plan-option input:checked + .plan-card::before {
+      background: linear-gradient(90deg, var(--green-l), var(--amber));
+    }
+    .plan-card:hover { border-color: rgba(45,122,82,0.4); transform: translateY(-1px); }
+
+    .plan-badge {
+      position: absolute; top: -1px; right: 16px;
+      background: linear-gradient(135deg, var(--green-l), var(--amber));
+      color: #fff; font-size: 0.68rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 0 0 8px 8px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .plan-name {
+      font-family: var(--font-h); font-weight: 700; font-size: 1rem;
+      color: #fff; margin-bottom: 4px;
+    }
+    .plan-price {
+      font-size: 1.8rem; font-weight: 800; color: var(--green-l);
+      line-height: 1; margin-bottom: 8px;
+    }
+    .plan-price sup { font-size: 1rem; vertical-align: super; }
+    .plan-price-note { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px; }
+    .plan-divider { height: 1px; background: var(--border-card); margin: 12px 0; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .plan-features li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.84rem; color: var(--text-muted);
+    }
+    .plan-features li::before {
+      content: '✓'; color: var(--green-l); font-weight: 700;
+      font-size: 0.82rem; margin-top: 1px; flex-shrink: 0;
+    }
+    .plan-check {
+      position: absolute; top: 14px; right: 16px;
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 2px solid var(--border-card);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .plan-option input:checked ~ .plan-card .plan-check {
+      background: var(--green-l); border-color: var(--green-l);
+    }
+    .plan-option input:checked ~ .plan-card .plan-check::after {
+      content: '✓'; color: #fff; font-size: 0.65rem; font-weight: 700;
+    }
+
+    /* ── CARE PLAN CARDS (horizontal) ── */
+    .care-card {
+      display: block; cursor: pointer;
+      background: var(--navy-2);
+      border: 2px solid var(--border-card);
+      border-radius: 14px; padding: 18px 20px;
+      transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+      position: relative;
+      user-select: none;
+    }
+    .plan-option input:checked + .care-card {
+      border-color: var(--green-l);
+      box-shadow: 0 0 0 1px var(--green-l), 0 8px 24px rgba(45,122,82,0.2);
+      transform: translateY(-2px);
+    }
+    .care-card:hover { border-color: rgba(45,122,82,0.4); }
+    .care-card-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .care-name {
+      font-family: var(--font-h); font-weight: 700; font-size: 0.95rem; color: #fff;
+    }
+    .care-price {
+      font-weight: 800; font-size: 1.4rem; color: var(--green-l); line-height: 1;
+    }
+    .care-price sub { font-size: 0.65rem; font-weight: 500; color: var(--text-muted); }
+    .care-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+    .care-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .care-tag {
+      background: rgba(45,122,82,0.12); border: 1px solid rgba(45,122,82,0.25);
+      color: #6ecf9a; font-size: 0.7rem; font-weight: 600;
+      padding: 3px 8px; border-radius: 20px;
+    }
+
+    /* ── SUMMARY SIDEBAR ── */
+    .buy-summary {
+      position: sticky; top: 88px;
+      background: var(--navy-3);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .summary-title {
+      font-family: var(--font-h); font-weight: 700; font-size: 1rem;
+      color: #fff; margin-bottom: 20px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border-card);
+    }
+    .summary-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 12px; font-size: 0.88rem;
+    }
+    .summary-row-label { color: var(--text-muted); }
+    .summary-row-value { color: #fff; font-weight: 600; }
+    .summary-divider { height: 1px; background: var(--border-card); margin: 16px 0; }
+    .summary-total {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .summary-total-label { font-weight: 700; color: #fff; font-size: 0.95rem; }
+    .summary-total-amount {
+      font-family: var(--font-h); font-size: 1.8rem; font-weight: 800;
+      color: var(--green-l);
+    }
+    .summary-recurring {
+      font-size: 0.8rem; color: var(--text-muted); text-align: right; margin-bottom: 24px;
+    }
+
+    .buy-cta {
+      display: block; width: 100%;
+      background: linear-gradient(135deg, var(--green-l), var(--green));
+      color: #fff; text-decoration: none; text-align: center;
+      font-family: var(--font-h); font-weight: 700; font-size: 1rem;
+      padding: 16px; border-radius: 12px; border: none; cursor: pointer;
+      transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      box-shadow: 0 4px 16px rgba(45,122,82,0.35);
+      position: relative; overflow: hidden;
+    }
+    .buy-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(45,122,82,0.45);
+    }
+    .buy-cta:active { transform: translateY(0); }
+    .buy-cta-note {
+      text-align: center; font-size: 0.78rem; color: var(--text-muted);
+      margin-top: 12px;
+    }
+    .summary-guarantees { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .guarantee-row {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .guarantee-icon { color: var(--green-l); font-size: 0.9rem; margin-top: 1px; flex-shrink: 0; }
+
+    /* ── TRUST SECTION ── */
+    .trust-section {
+      background: var(--navy-2);
+      border-top: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-card);
+      padding: 56px 24px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .trust-inner { max-width: 900px; margin: 0 auto; }
+    .trust-stars { color: var(--amber); font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 8px; }
+    .trust-rating { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 40px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 640px) { .trust-grid { grid-template-columns: 1fr; } }
+    .trust-card {
+      background: var(--navy-3); border: 1px solid var(--border-card);
+      border-radius: 12px; padding: 24px 20px;
+    }
+    .trust-quote { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; font-style: italic; }
+    .trust-author { font-size: 0.8rem; color: var(--green-l); font-weight: 600; }
+    .trust-location { font-size: 0.75rem; color: var(--text-muted); }
+    .trust-badges {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--navy-3); border: 1px solid var(--border-card);
+      border-radius: 8px; padding: 10px 18px;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .trust-badge-icon { font-size: 1rem; }
+
+    /* ── FAQ ── */
+    .buy-faq { max-width: 700px; margin: 0 auto; padding: 56px 24px; }
+    .buy-faq h2 {
+      font-family: var(--font-h); font-size: 1.6rem; font-weight: 700;
+      color: #fff; text-align: center; margin-bottom: 32px;
+    }
+    .faq-item {
+      border: 1px solid var(--border-card); border-radius: 10px;
+      margin-bottom: 10px; overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 16px 20px; font-weight: 600; font-size: 0.92rem; color: #fff;
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+'; color: var(--green-l); font-size: 1.1rem; font-weight: 400;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-body { padding: 0 20px 16px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── FOOTER ── */
+    .buy-footer {
+      border-top: 1px solid var(--border-card);
+      padding: 28px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .buy-footer a { color: var(--text-muted); text-decoration: none; }
+    .buy-footer a:hover { color: var(--green-l); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .buy-hero { animation: fadeUp 0.5s var(--ease) both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="buy-nav">
+    <a href="index.html" class="buy-nav-logo">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="nav-g" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#2a7050"/><stop offset="1" stop-color="#0a1c11"/>
+          </linearGradient>
+          <linearGradient id="nav-cf" x1="0" y1="19" x2="0" y2="33" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#2d7a52" stop-opacity="0.45"/><stop offset="1" stop-color="#2d7a52" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="44" height="44" rx="10" fill="url(#nav-g)"/>
+        <rect x="5" y="7" width="34" height="30" rx="4.5" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+        <rect x="5" y="7" width="34" height="10" rx="4.5" fill="rgba(0,0,0,0.22)"/>
+        <rect x="5" y="12" width="34" height="5" fill="rgba(0,0,0,0.22)"/>
+        <circle cx="10.5" cy="12" r="1.6" fill="#e05252" opacity="0.9"/>
+        <circle cx="15.5" cy="12" r="1.6" fill="#e0b352" opacity="0.9"/>
+        <circle cx="20.5" cy="12" r="1.6" fill="#52b96a" opacity="0.9"/>
+        <polyline points="8,32 13,27 19,29.5 25.5,23 34,18" stroke="#2d7a52" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M8,32 L13,27 L19,29.5 L25.5,23 L34,18 L34,32 Z" fill="url(#nav-cf)"/>
+        <circle cx="34" cy="18" r="2.3" fill="#f2a93b"/>
+        <polyline points="32,15.5 34,13 36,15.5" stroke="#f2a93b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      Summit Webs
+    </a>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="index.html" class="buy-nav-back">← Back to site</a>
+      <a href="index.html#contact" class="buy-nav-talk">Talk to us instead</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="buy-hero">
+    <div class="buy-kicker">Free mockup first — see it before you pay</div>
+    <h1>Let's Build Your <span>Website.</span></h1>
+    <p class="buy-hero-sub">Pick your package below. We'll build a free mockup first — you approve it, then we go live. Typically 7–14 days from kickoff.</p>
+    <div class="buy-steps">
+      <div class="buy-step"><span class="buy-step-num">1</span> Choose your build package</div>
+      <span class="buy-step-arrow">→</span>
+      <div class="buy-step"><span class="buy-step-num">2</span> Pick a monthly care plan</div>
+      <span class="buy-step-arrow">→</span>
+      <div class="buy-step"><span class="buy-step-num">3</span> We build your free mockup</div>
+      <span class="buy-step-arrow">→</span>
+      <div class="buy-step"><span class="buy-step-num">4</span> Approve &amp; go live</div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="buy-main">
+
+    <!-- LEFT: Package selector -->
+    <div>
+
+      <!-- STEP 1: Build Package -->
+      <div class="buy-section-label"><span>1</span> Choose your site build</div>
+      <div class="plan-grid plan-grid-3" id="buildGrid">
+
+        <!-- Basic -->
+        <div class="plan-option">
+          <input type="radio" name="build" id="build-basic" value="basic" data-price="97" data-name="Basic Site" />
+          <label class="plan-card" for="build-basic">
+            <div class="plan-check"></div>
+            <div class="plan-name">Basic Site</div>
+            <div class="plan-price"><sup>$</sup>97</div>
+            <div class="plan-price-note">one-time build fee</div>
+            <div class="plan-divider"></div>
+            <ul class="plan-features">
+              <li>Up to 3 pages (hero, services, contact)</li>
+              <li>Mobile-optimised &amp; fast</li>
+              <li>Contact form built in</li>
+              <li>Google Business integration</li>
+              <li>Free mockup first</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Pro (default selected) -->
+        <div class="plan-option">
+          <input type="radio" name="build" id="build-pro" value="pro" data-price="147" data-name="Pro Site" checked />
+          <label class="plan-card" for="build-pro">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-check"></div>
+            <div class="plan-name">Pro Site</div>
+            <div class="plan-price"><sup>$</sup>147</div>
+            <div class="plan-price-note">one-time build fee</div>
+            <div class="plan-divider"></div>
+            <ul class="plan-features">
+              <li>Up to 6 pages (+ gallery, about, reviews)</li>
+              <li>Custom photography &amp; copywriting</li>
+              <li>On-page SEO included</li>
+              <li>Blog / news section</li>
+              <li>Google Analytics &amp; Maps setup</li>
+              <li>Free mockup first</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Premium -->
+        <div class="plan-option">
+          <input type="radio" name="build" id="build-premium" value="premium" data-price="197" data-name="Premium Site" />
+          <label class="plan-card" for="build-premium">
+            <div class="plan-check"></div>
+            <div class="plan-name">Premium Site</div>
+            <div class="plan-price"><sup>$</sup>197</div>
+            <div class="plan-price-note">one-time build fee</div>
+            <div class="plan-divider"></div>
+            <ul class="plan-features">
+              <li>Unlimited pages</li>
+              <li>Online quote / booking form</li>
+              <li>Service area map</li>
+              <li>Review generation system</li>
+              <li>Priority design &amp; support</li>
+              <li>Competitor research included</li>
+              <li>Free mockup first</li>
+            </ul>
+          </label>
+        </div>
+
+      </div><!-- /buildGrid -->
+
+      <!-- STEP 2: Care Plan -->
+      <div class="buy-section-label"><span>2</span> Pick your monthly care plan</div>
+      <div class="plan-grid plan-grid-3-care" id="careGrid">
+
+        <!-- Essential -->
+        <div class="plan-option">
+          <input type="radio" name="care" id="care-essential" value="essential" data-price="50" data-name="Essential" />
+          <label class="care-card" for="care-essential">
+            <div class="plan-check"></div>
+            <div class="care-card-top">
+              <div class="care-name">Essential</div>
+              <div class="care-price">$50<sub>/mo</sub></div>
+            </div>
+            <div class="care-desc">Keep your site live, secure, and up to date — hands-free.</div>
+            <div class="care-tags">
+              <span class="care-tag">Hosting</span>
+              <span class="care-tag">SSL</span>
+              <span class="care-tag">Security</span>
+              <span class="care-tag">Backups</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Growth (default) -->
+        <div class="plan-option">
+          <input type="radio" name="care" id="care-growth" value="growth" data-price="100" data-name="Growth" checked />
+          <label class="care-card" for="care-growth">
+            <div class="plan-badge">Best Value</div>
+            <div class="plan-check"></div>
+            <div class="care-card-top">
+              <div class="care-name">Growth</div>
+              <div class="care-price">$100<sub>/mo</sub></div>
+            </div>
+            <div class="care-desc">Everything in Essential plus SEO, edits, and monthly reports.</div>
+            <div class="care-tags">
+              <span class="care-tag">Hosting &amp; Security</span>
+              <span class="care-tag">On-page SEO</span>
+              <span class="care-tag">Monthly Edits</span>
+              <span class="care-tag">Analytics Report</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Pro -->
+        <div class="plan-option">
+          <input type="radio" name="care" id="care-pro" value="pro-care" data-price="150" data-name="Pro" />
+          <label class="care-card" for="care-pro">
+            <div class="plan-check"></div>
+            <div class="care-card-top">
+              <div class="care-name">Pro</div>
+              <div class="care-price">$150<sub>/mo</sub></div>
+            </div>
+            <div class="care-desc">Full-service: managed ads, more edits, and a dedicated account rep.</div>
+            <div class="care-tags">
+              <span class="care-tag">Everything in Growth</span>
+              <span class="care-tag">Managed Google Ads</span>
+              <span class="care-tag">Unlimited Edits</span>
+              <span class="care-tag">Priority Support</span>
+            </div>
+          </label>
+        </div>
+
+      </div><!-- /careGrid -->
+
+    </div><!-- /left -->
+
+    <!-- RIGHT: Summary & CTA -->
+    <div>
+      <div class="buy-summary">
+        <div class="summary-title">Your Order</div>
+
+        <div class="summary-row">
+          <span class="summary-row-label">Build Package</span>
+          <span class="summary-row-value" id="summaryBuildName">Pro Site</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-row-label">One-time fee</span>
+          <span class="summary-row-value" id="summaryBuildPrice">$147</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row">
+          <span class="summary-row-label">Monthly Plan</span>
+          <span class="summary-row-value" id="summaryCareName">Growth</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-row-label">Monthly from</span>
+          <span class="summary-row-value" id="summaryCarePrice">$100/mo</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-total">
+          <span class="summary-total-label">Due Today</span>
+          <span class="summary-total-amount" id="summaryTotal">$147</span>
+        </div>
+        <div class="summary-recurring" id="summaryRecurring">then $100/mo after launch</div>
+
+        <!-- ====================================================
+             STRIPE PAYMENT LINKS
+             Replace each href with your Stripe payment link.
+             Use URL params to pass plan info if needed.
+             ====================================================
+             Basic build:    https://buy.stripe.com/YOUR_BASIC_LINK
+             Pro build:      https://buy.stripe.com/YOUR_PRO_LINK
+             Premium build:  https://buy.stripe.com/YOUR_PREMIUM_LINK
+             ====================================================-->
+        <a href="#" id="buyNowBtn" class="buy-cta" onclick="handleBuy(event)">
+          Get My Free Mockup &rarr;
+        </a>
+        <p class="buy-cta-note">You'll see your mockup first — no charge until you approve it.</p>
+
+        <div class="summary-guarantees">
+          <div class="guarantee-row">
+            <span class="guarantee-icon">✓</span>
+            <span>Free mockup — see it before you commit</span>
+          </div>
+          <div class="guarantee-row">
+            <span class="guarantee-icon">✓</span>
+            <span>No contracts — cancel your monthly plan anytime</span>
+          </div>
+          <div class="guarantee-row">
+            <span class="guarantee-icon">✓</span>
+            <span>Live in 7–14 days from kickoff</span>
+          </div>
+          <div class="guarantee-row">
+            <span class="guarantee-icon">✓</span>
+            <span>100% built for landscaping &amp; lawn care businesses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /buy-main -->
+
+  <!-- TRUST SECTION -->
+  <section class="trust-section">
+    <div class="trust-inner">
+      <div class="trust-stars">★★★★★</div>
+      <div class="trust-rating">5.0 average · 47 Google Reviews · Northeast Ohio</div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <p class="trust-quote">"Summit Webs built our site in under two weeks. We started getting calls from Google within the first month — it paid for itself immediately."</p>
+          <div class="trust-author">Mike Trevino</div>
+          <div class="trust-location">Trevino's Lawn Care · Twinsburg, OH</div>
+        </div>
+        <div class="trust-card">
+          <p class="trust-quote">"I was skeptical about paying for a website at first. Now I wonder why I waited so long. The design is clean, it shows up on Google, and I didn't have to do any of it."</p>
+          <div class="trust-author">Jason Park</div>
+          <div class="trust-location">Park Brothers Landscaping · Hudson, OH</div>
+        </div>
+        <div class="trust-card">
+          <p class="trust-quote">"Best investment I made for my business. They handled everything — design, writing, setup. My phone rings every week from people who found me online."</p>
+          <div class="trust-author">David Solis</div>
+          <div class="trust-location">Solis Landscaping &amp; Snow · Solon, OH</div>
+        </div>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-badge"><span class="trust-badge-icon">🔒</span> Secure checkout via Stripe</div>
+        <div class="trust-badge"><span class="trust-badge-icon">⭐</span> 5.0 Google Rating</div>
+        <div class="trust-badge"><span class="trust-badge-icon">📍</span> Based in NE Ohio</div>
+        <div class="trust-badge"><span class="trust-badge-icon">🚀</span> Live in 7–14 days</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="buy-faq">
+    <h2>Quick Answers</h2>
+
+    <details class="faq-item">
+      <summary>Do I actually see the design before I pay?</summary>
+      <div class="faq-body">Yes — always. We build a full mockup of your homepage (sometimes the full site) before you pay a single dollar. You review it, we revise if needed, and only once you're happy do we send an invoice and go live.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What if I don't like what you build?</summary>
+      <div class="faq-body">Tell us and we'll revise it. Our mockup process includes two rounds of changes. If after revisions it's still not a fit, you walk away — no charge, no awkwardness. We've never had that happen, but the option is there.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I cancel the monthly plan?</summary>
+      <div class="faq-body">Yes, any time. There are no contracts or cancellation fees. Just let us know 30 days before your next billing date and we'll wrap things up — including handing over your files if you want to take it somewhere else.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does the monthly plan actually include?</summary>
+      <div class="faq-body">At minimum (Essential): hosting, SSL certificate, security monitoring, and weekly backups — everything your site needs to stay online and secure. Growth adds monthly SEO updates, content tweaks, and a monthly Google Analytics summary. Pro adds managed Google Ads and unlimited edit requests.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you only work with landscaping companies?</summary>
+      <div class="faq-body">Yes — we specialize exclusively in landscaping, lawn care, tree service, and snow removal companies in Northeast Ohio. That means every template, every line of copy, and every SEO strategy we use is tuned specifically for your industry and your local market.</div>
+    </details>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="buy-footer">
+    <span>© 2025 Summit Webs · Northeast Ohio Web Design</span>
+    <div style="display:flex;gap:20px;">
+      <a href="index.html">Main Site</a>
+      <a href="index.html#pricing">All Pricing</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Live order summary ─────────────────────────────────────────────────────
+    const buildInputs = document.querySelectorAll('input[name="build"]');
+    const careInputs  = document.querySelectorAll('input[name="care"]');
+
+    function updateSummary() {
+      const build = document.querySelector('input[name="build"]:checked');
+      const care  = document.querySelector('input[name="care"]:checked');
+      if (!build || !care) return;
+
+      const bp = parseInt(build.dataset.price);
+      const cp = parseInt(care.dataset.price);
+
+      document.getElementById('summaryBuildName').textContent  = build.dataset.name;
+      document.getElementById('summaryBuildPrice').textContent = '$' + bp;
+      document.getElementById('summaryCareName').textContent   = care.dataset.name;
+      document.getElementById('summaryCarePrice').textContent  = '$' + cp + '/mo';
+      document.getElementById('summaryTotal').textContent      = '$' + bp;
+      document.getElementById('summaryRecurring').textContent  = 'then $' + cp + '/mo after launch';
+    }
+
+    buildInputs.forEach(i => i.addEventListener('change', updateSummary));
+    careInputs.forEach(i  => i.addEventListener('change', updateSummary));
+    updateSummary();
+
+    // ── Stripe payment link router ─────────────────────────────────────────────
+    // Replace these URLs with your actual Stripe payment links.
+    const stripeLinks = {
+      basic:   '#',   // e.g. 'https://buy.stripe.com/...'
+      pro:     '#',
+      premium: '#',
+    };
+
+    function handleBuy(e) {
+      e.preventDefault();
+      const build = document.querySelector('input[name="build"]:checked');
+      const care  = document.querySelector('input[name="care"]:checked');
+      const link  = build ? stripeLinks[build.value] : '#';
+
+      if (link === '#') {
+        // Fallback: redirect to contact form until Stripe is configured
+        const subject = encodeURIComponent('Website Inquiry — ' + (build?.dataset.name || 'Pro Site'));
+        const body = encodeURIComponent(
+          'Hi, I\'d like to get started with the ' + (build?.dataset.name || 'Pro Site') +
+          ' build and the ' + (care?.dataset.name || 'Growth') + ' monthly plan.'
+        );
+        window.open(
+          'https://mail.google.com/mail/?view=cm&fs=1&to=summitwebsco@gmail.com&subject=' + subject + '&body=' + body,
+          '_blank'
+        );
+      } else {
+        window.location.href = link;
+      }
+    }
+  </script>
+</body>
+</html>
