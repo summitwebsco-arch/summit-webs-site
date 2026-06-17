@@ -3,37 +3,35 @@ import { isGmailConfigured } from "@/lib/gmail";
 import OutreachPanel from "@/components/OutreachPanel";
 
 export default async function OutreachPage() {
-  const crm = await getCrmData();
-  const allLeads = crm?.leads ?? [];
+  const crm             = await getCrmData();
+  const allLeads        = crm?.leads ?? [];
   const gmailConfigured = isGmailConfigured();
 
   return (
-    <main className="page-bg-glow p-8 max-w-4xl mx-auto">
-      <header className="mb-8">
-        <p className="text-xs uppercase tracking-widest text-primary font-bold mb-1">
-          Outreach
-        </p>
-        <h1 className="text-3xl font-bold text-navy">AI Email Outreach</h1>
-        <p className="text-zinc-500 mt-2 max-w-2xl">
-          Generate personalized cold emails for new leads and automated Day 3/7/14 follow-ups
-          for contacted leads — saved as drafts in Gmail for you to review and send.
+    <main className="page-content" style={{ maxWidth: 900, margin: "0 auto" }}>
+      <header className="page-header">
+        <div className="page-header-kicker">Outreach</div>
+        <h1>AI Email Outreach</h1>
+        <p className="page-header-sub">
+          Generate personalized cold emails and Day 3/7/14 follow-ups — saved as Gmail drafts for you to review.
         </p>
       </header>
 
       {!crm && (
-        <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6 text-sm">
-          CRM not connected yet. Set up <code>GOOGLE_SHEETS_ID</code> in{" "}
-          <code>.env.local</code> first (see README).
+        <div className="alert alert-amber">
+          <svg className="shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>CRM not connected — set <code>GOOGLE_SHEETS_ID</code> in <code>.env.local</code> first.</span>
         </div>
       )}
 
       {!gmailConfigured && (
-        <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6 text-sm">
-          Gmail isn&apos;t connected yet — drafts will be generated here for you to copy, but
-          won&apos;t be saved to Gmail until you add{" "}
-          <code>GMAIL_CLIENT_ID</code>, <code>GMAIL_CLIENT_SECRET</code>, and{" "}
-          <code>GMAIL_REFRESH_TOKEN</code> to <code>.env.local</code>. Run{" "}
-          <code>node scripts/gmail-auth.mjs</code> to get the refresh token (see README).
+        <div className="alert alert-amber">
+          <svg className="shrink-0 mt-0.5" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>
+            Gmail not connected — drafts will display here for copy/paste until you add{" "}
+            <code>GMAIL_CLIENT_ID</code>, <code>GMAIL_CLIENT_SECRET</code>, and{" "}
+            <code>GMAIL_REFRESH_TOKEN</code> to <code>.env.local</code>.
+          </span>
         </div>
       )}
 

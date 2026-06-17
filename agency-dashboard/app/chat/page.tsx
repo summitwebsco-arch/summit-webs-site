@@ -9,12 +9,12 @@ export default function ChatPage() {
     {
       role: "assistant",
       content:
-        "Hey — I'm your business assistant for Summit Webs. Ask me about pricing, outreach, the agent team, or anything else about running the agency.",
+        "Hey — I'm your business assistant for Summit Webs. Ask me about pricing, outreach, the agent team, or anything about running the agency.",
     },
   ]);
-  const [input, setInput] = useState("");
+  const [input, setInput]   = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError]   = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,22 +32,16 @@ export default function ChatPage() {
     setError(null);
 
     try {
-      const res = await fetch("/api/chat", {
+      const res  = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next }),
       });
       const data = await res.json();
 
-      if (!res.ok) {
-        setError(data.error ?? "Something went wrong.");
-        return;
-      }
+      if (!res.ok) { setError(data.error ?? "Something went wrong."); return; }
 
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: data.reply },
-      ]);
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
     } catch {
       setError("Network error — is the dev server running?");
     } finally {
@@ -56,56 +50,62 @@ export default function ChatPage() {
   }
 
   return (
-    <main className="page-bg-glow p-8 max-w-3xl mx-auto flex flex-col h-screen">
-      <header className="mb-4">
-        <p className="text-xs uppercase tracking-widest text-primary font-bold mb-1">
-          Assistant
-        </p>
-        <h1 className="text-3xl font-bold text-navy">Business Chat</h1>
+    <main className="page-content flex flex-col" style={{ height: "calc(100vh - 52px)" }}>
+      <header className="page-header" style={{ marginBottom: 20 }}>
+        <div className="page-header-kicker">Assistant</div>
+        <h1>Business Chat</h1>
       </header>
 
-      <div className="flex-1 overflow-y-auto bg-white border border-border rounded-2xl shadow-sm p-4 space-y-3 mb-4">
+      {/* Message area */}
+      <div
+        className="flex-1 overflow-y-auto rounded-2xl p-5 space-y-4 mb-4"
+        style={{ background: "#fff", border: "1px solid var(--color-border-soft)", boxShadow: "var(--shadow-sm)", minHeight: 0 }}
+      >
         {messages.map((m, i) => (
           <div
             key={i}
-            className={`flex items-end gap-2 ${
-              m.role === "user" ? "justify-end" : "justify-start"
-            }`}
+            className={`flex items-end gap-2.5 ${m.role === "user" ? "justify-end" : "justify-start"}`}
           >
             {m.role === "assistant" && (
               <div
-                className="shrink-0 w-7 h-7 rounded-full text-white flex items-center justify-center text-xs font-bold shadow-md"
+                className="shrink-0 w-8 h-8 rounded-full text-white flex items-center justify-center text-xs font-black shadow-md"
                 style={{ background: "var(--grad-brand)" }}
               >
-                S
+                SW
               </div>
             )}
             <div
-              className={`max-w-[80%] rounded-2xl px-3.5 py-2 text-sm whitespace-pre-wrap shadow-sm ${
+              className={`max-w-[78%] rounded-2xl px-4 py-2.5 text-sm whitespace-pre-wrap leading-relaxed ${
                 m.role === "user"
-                  ? "text-white rounded-br-sm"
-                  : "bg-zinc-100 text-navy rounded-bl-sm"
+                  ? "text-white rounded-br-sm shadow-sm"
+                  : "rounded-bl-sm"
               }`}
               style={
-                m.role === "user" ? { background: "var(--grad-brand)" } : undefined
+                m.role === "user"
+                  ? { background: "var(--grad-brand)" }
+                  : { background: "#f3f7f4", color: "var(--color-navy)", border: "1px solid var(--color-border-soft)" }
               }
             >
               {m.content}
             </div>
           </div>
         ))}
+
         {loading && (
-          <div className="flex items-end gap-2 justify-start">
+          <div className="flex items-end gap-2.5 justify-start">
             <div
-              className="shrink-0 w-7 h-7 rounded-full text-white flex items-center justify-center text-xs font-bold shadow-md"
+              className="shrink-0 w-8 h-8 rounded-full text-white flex items-center justify-center text-xs font-black shadow-md"
               style={{ background: "var(--grad-brand)" }}
             >
-              S
+              SW
             </div>
-            <div className="bg-zinc-100 text-zinc-400 rounded-2xl rounded-bl-sm px-3.5 py-2 text-sm italic flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce [animation-delay:-0.3s]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce [animation-delay:-0.15s]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 animate-bounce" />
+            <div
+              className="rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1"
+              style={{ background: "#f3f7f4", border: "1px solid var(--color-border-soft)" }}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:-0.3s]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce [animation-delay:-0.15s]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-bounce" />
             </div>
           </div>
         )}
@@ -113,26 +113,26 @@ export default function ChatPage() {
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-200 text-red-700 rounded-lg p-3 text-sm mb-3">
-          {error}
+        <div className="alert alert-amber mb-3">
+          <svg className="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>{error}</span>
         </div>
       )}
 
-      <div className="flex gap-2">
+      {/* Input */}
+      <div className="flex gap-2 pb-1">
         <input
-          className="flex-1 border border-border rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary transition-shadow"
+          className="input-dash flex-1"
           placeholder="Ask about pricing, outreach, the agent team..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") sendMessage();
-          }}
+          onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) sendMessage(); }}
         />
         <button
           onClick={sendMessage}
           disabled={loading}
-          className="text-white rounded-lg px-4 py-2 text-sm font-semibold disabled:opacity-50 shadow-md transition-transform hover:-translate-y-0.5 active:translate-y-0"
-          style={{ background: "var(--grad-brand)" }}
+          className="btn-dash btn-dash-primary shrink-0"
+          style={{ paddingLeft: 20, paddingRight: 20 }}
         >
           Send
         </button>

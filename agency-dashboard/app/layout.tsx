@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import TopBar from "@/components/TopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Summit Webs | Agency Command Center",
-  description: "Local command center for Summit Webs.",
+  title: "Summit Webs | Command Center",
+  description: "Internal command center for Summit Webs.",
 };
 
 export default function RootLayout({
@@ -30,7 +31,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex">
         <Sidebar />
-        <div className="flex-1 min-w-0">{children}</div>
+        <div className="flex-1 min-w-0 flex flex-col">
+          <TopBar />
+          <div className="flex-1 overflow-y-auto">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
