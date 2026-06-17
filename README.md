@@ -164,3 +164,30 @@ GMAIL_USER_EMAIL         summitwebsco@gmail.com
 - Build real portfolio examples as client base grows (replace placeholder reviews with verified ones)
 - Register agency domain and point it to agency-site
 - Set up Google Workspace email if needed (or keep using summitwebsco@gmail.com)
+
+---
+
+## Changelog
+
+### June 16, 2026
+
+**Gmail auto-notification on lead form**
+`submit-lead.js` now fires an email to `summitwebsco@gmail.com` every time someone submits the lead form. Uses OAuth2 refresh token flow (not a service account) — no external npm packages, just built-in `https`. Required adding `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN` to Netlify environment variables.
+
+**Netlify deploy fixes**
+- Removed `ignore = "exit 1"` that was blocking all auto-deploys
+- Deleted duplicate `agency-site/netlify.toml` that conflicted with the root-level one
+- Added explicit `command = ""` to root `netlify.toml` so Netlify doesn't try to auto-detect a framework build
+- Stripped `googleapis` and `stripe` from root `package.json` — functions use zero external deps
+
+**Homepage copy cleanup**
+Removed all 29 em dashes from `index.html` that made the copy read as AI-generated. Replaced with periods, commas, or colons depending on context.
+
+**3D canvas showcase — full rewrite (`3d-scene.js`)**
+Replaced a static/underutilized canvas with a showcase that demonstrates the agency's design range. Three website mockups cycle every 8 seconds with a crossfade transition:
+
+- **GreenEdge Landscaping** — dark emerald, split hero, circular photo, floating stat cards, service strip
+- **Sunrise Grounds** — warm earthy dark-brown, centered hero, gallery cards, stats bar
+- **Apex Grounds** — deep navy + cyan, asymmetric hero, giant glowing "97%" satisfaction number, monospace nav
+
+Each site has a matching mobile version rendered on the iPhone mesh. Background replaced with topographic contour lines — organic terrain curves in deep green radiating from behind the devices, referencing landscaping/land design. MacBook pulled closer (`-1.0, -0.8, 0`) and camera moved from z=10 to z=7 for better device visibility.
