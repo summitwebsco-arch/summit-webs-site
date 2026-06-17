@@ -1,0 +1,7 @@
+[build]
+  base      = "agency-site"
+  publish   = "agency-site"
+  functions = "agency-site/netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
