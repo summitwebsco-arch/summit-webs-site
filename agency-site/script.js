@@ -124,6 +124,21 @@ if (capRow) {
   capObserver.observe(capRow);
 }
 
+// Hide Calendly skeleton once the widget is ready, with a 5s fallback
+function hideCalskel() {
+  const skel = document.getElementById('calendlySkeleton');
+  if (skel) skel.classList.add('hidden');
+}
+const calFallback = setTimeout(hideCalskel, 5000);
+window.addEventListener('message', (e) => {
+  let evt;
+  try { evt = typeof e.data === 'string' ? JSON.parse(e.data).event : e.data?.event; } catch (_) {}
+  if (evt === 'calendly.event_type_viewed' || evt === 'calendly.date_and_time_selected') {
+    clearTimeout(calFallback);
+    hideCalskel();
+  }
+});
+
 // Scroll parallax for the hero visual
 const heroVisual = document.querySelector('.hero-visual');
 if (heroVisual && !reduceMotion) {

@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Get Your Website | Summit Webs</title>
-  <meta name="description" content="Choose your package and we'll build a free mockup of your landscaping website. Approve it first — then go live in 7–14 days.">
+  <meta name="description" content="Choose your package and we'll build a free mockup of your landscaping website. Approve it first — then go live in 7–14 days." />
+  <link rel="canonical" href="https://summitwebsco.com/buy" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -505,7 +506,8 @@
     100% { transform: scale(1); }
   }
   .sum-total-sup { font-size: 1rem; color: #4aab7a; }
-  .sum-recurring { font-size: 0.73rem; color: #2f5040; text-align: right; }
+  .sum-total-breakdown { font-size: 0.72rem; color: #526e62; text-align: right; margin-top: 2px; }
+  .sum-recurring { font-size: 0.73rem; color: #2f5040; text-align: right; margin-top: 3px; }
 
   .sum-cta { padding: 18px 22px 16px; }
 
@@ -1086,16 +1088,17 @@
               <span class="sum-row-val" id="sumCarePrice">$100/mo</span>
             </div>
             <span class="sum-row-name" id="sumCareLabel">Growth</span>
-            <span class="sum-row-detail">billed monthly after launch</span>
+            <span class="sum-row-detail">starts today, billed monthly</span>
           </div>
         </div>
 
         <div class="sum-total">
           <div class="sum-total-row">
             <span class="sum-total-label">Due today</span>
-            <span class="sum-total-amt" id="sumTotal"><sup class="sum-total-sup">$</sup>147</span>
+            <span class="sum-total-amt" id="sumTotal"><sup class="sum-total-sup">$</sup>247</span>
           </div>
-          <div class="sum-recurring" id="sumRecurring">then $100/mo after your site goes live</div>
+          <div class="sum-total-breakdown" id="sumBreakdown">$147 build + $100 first month</div>
+          <div class="sum-recurring" id="sumRecurring">then $100/mo</div>
         </div>
 
         <div class="sum-cta">
@@ -1226,10 +1229,19 @@
   //   (b) set up the subscription manually in Stripe Dashboard after launch.
   // Tip: append ?prefilled_email=EMAIL to any link — Stripe will pre-fill the
   //      customer's email at checkout automatically.
+  // One link per build+care combination — each includes both the one-time build
+  // fee and the recurring care plan so Stripe handles both charges at checkout.
+  // Replace every URL below with your real Stripe Payment Link URLs.
   const STRIPE_LINKS = {
-    basic:   'https://buy.stripe.com/aFa9AS1Q5f36arc2Bh00000',
-    pro:     'https://buy.stripe.com/fZudR8fGVbQUbvgdfV00001',
-    premium: 'https://buy.stripe.com/6oU4gyeCRbQU7f00t900002',
+    'basic-essential':   'https://buy.stripe.com/fZu28q2U92gkfLw2Bh00008',
+    'basic-growth':      'https://buy.stripe.com/4gM3cu8et7AE8j46Rx00007',
+    'basic-pro-care':    'https://buy.stripe.com/aFa9AS1Q5f36arc2Bh00000',
+    'pro-essential':     'https://buy.stripe.com/eVq14m1Q58EI42O1xd00006',
+    'pro-growth':        'https://buy.stripe.com/8x2bJ0fGV8EIgPAa3J00005',
+    'pro-pro-care':      'https://buy.stripe.com/fZudR8fGVbQUbvgdfV00001',
+    'premium-essential': 'https://buy.stripe.com/bJe28q9ixdZ22YKa3J00004',
+    'premium-growth':    'https://buy.stripe.com/28E6oG8et6wA9n81xd00003',
+    'premium-pro-care':  'https://buy.stripe.com/6oU4gyeCRbQU7f00t900002',
   };
 
   // ── Default path ────────────────────────────────────────────────────────────
@@ -1277,13 +1289,17 @@
     document.getElementById('sumCarePrice').textContent  = '$' + cp + '/mo';
     document.getElementById('sumRecurring').textContent  = 'then $' + cp + '/mo after your site goes live';
 
+    const todayTotal = bp + cp;
     const totalEl = document.getElementById('sumTotal');
-    totalEl.innerHTML = '<sup class="sum-total-sup">$</sup>' + bp;
+    totalEl.innerHTML = '<sup class="sum-total-sup">$</sup>' + todayTotal;
     totalEl.classList.remove('pop');
     void totalEl.offsetWidth;
     totalEl.classList.add('pop');
 
-    document.getElementById('mobileTotal').textContent = '$' + bp;
+    document.getElementById('sumBreakdown').textContent = '$' + bp + ' build + $' + cp + ' first month';
+    document.getElementById('sumRecurring').textContent = 'then $' + cp + '/mo';
+
+    document.getElementById('mobileTotal').textContent = '$' + todayTotal;
     document.getElementById('mobileSub').textContent   = build.dataset.label + ' + $' + cp + '/mo';
 
     updateNextSteps();
@@ -1360,7 +1376,8 @@
       'https://mail.google.com/mail/?view=cm&fs=1&to=summitwebsco@gmail.com&subject=' +
       subject + '&body=' + body;
 
-    const stripeLink = build ? STRIPE_LINKS[build.value] : '';
+    const stripeKey  = build && care ? `${build.value}-${care.value}` : '';
+    const stripeLink = stripeKey ? (STRIPE_LINKS[stripeKey] || '') : '';
 
     // Disable button while submitting
     const ctaBtn = document.getElementById('ctaBtn');

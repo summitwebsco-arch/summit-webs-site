@@ -1770,6 +1770,65 @@ button:focus-visible,
   overflow: hidden;
   padding: 6px;
 }
+.calendly-skeleton {
+  position: absolute;
+  inset: 6px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 20px;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.calendly-skeleton.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes cal-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.cal-skel-line,
+.cal-skel-day,
+.cal-skel-slot {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 800px 100%;
+  animation: cal-shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+.cal-skel-title {
+  height: 18px;
+  width: 60%;
+  margin-bottom: 20px;
+}
+.cal-skel-line {
+  height: 12px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.cal-skel-line.short {
+  width: 50%;
+  margin-bottom: 20px;
+}
+.cal-skel-days {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.cal-skel-day {
+  flex: 1;
+  height: 52px;
+  border-radius: 8px;
+}
+.cal-skel-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cal-skel-slot {
+  height: 40px;
+  border-radius: 8px;
+}
 .final-cta .btn-link {
   display: inline-block;
   margin-top: 16px;

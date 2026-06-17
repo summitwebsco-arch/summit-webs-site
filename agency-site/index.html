@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://summitwebsco.com/" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Calendly scheduling widget -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
@@ -485,6 +486,17 @@
           <p class="contact-option-label">Book a free 30-minute call</p>
           <p class="contact-option-sub">Grab a time and we'll walk through what your site could look like. Nothing to prepare, just show up.</p>
           <div class="calendly-card">
+            <div class="calendly-skeleton" id="calendlySkeleton" aria-hidden="true">
+              <div class="cal-skel-line cal-skel-title"></div>
+              <div class="cal-skel-days">
+                <div class="cal-skel-day"></div><div class="cal-skel-day"></div><div class="cal-skel-day"></div><div class="cal-skel-day"></div><div class="cal-skel-day"></div>
+              </div>
+              <div class="cal-skel-line"></div>
+              <div class="cal-skel-line short"></div>
+              <div class="cal-skel-slots">
+                <div class="cal-skel-slot"></div><div class="cal-skel-slot"></div><div class="cal-skel-slot"></div>
+              </div>
+            </div>
             <div class="calendly-inline-widget" data-url="https://calendly.com/summitwebsco/30min?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:280px;height:560px;"></div>
           </div>
           <a href="https://calendly.com/summitwebsco/30min" target="_blank" rel="noopener" class="btn btn-link" style="margin-top:12px; font-size:0.8rem;">Can't find a time? Open in new tab &rarr;</a>
