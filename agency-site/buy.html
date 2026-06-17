@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Website | Summit Webs</title>
+  <meta name="description" content="Choose your package and we'll build a free mockup of your landscaping website. Approve it first — then go live in 7–14 days.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='64' y2='64' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232a7050'/%3E%3Cstop offset='1' stop-color='%230a1c11'/%3E%3C/linearGradient%3E%3ClinearGradient id='cf' x1='0' y1='28' x2='0' y2='52' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%232d7a52' stop-opacity='0.5'/%3E%3Cstop offset='1' stop-color='%232d7a52' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23bg)'/%3E%3Crect x='8' y='11' width='48' height='42' rx='6' fill='rgba(0,0,0,0.32)' stroke='rgba(255,255,255,0.1)' stroke-width='1'/%3E%3Crect x='8' y='11' width='48' height='14' rx='6' fill='rgba(0,0,0,0.2)'/%3E%3Crect x='8' y='19' width='48' height='6' fill='rgba(0,0,0,0.2)'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e05252' opacity='0.9'/%3E%3Ccircle cx='24' cy='18' r='2.5' fill='%23e0b352' opacity='0.9'/%3E%3Ccircle cx='32' cy='18' r='2.5' fill='%2352b96a' opacity='0.9'/%3E%3Cpolyline points='11,48 20,39 29,43 40,33 53,24' stroke='%232d7a52' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M11,48 L20,39 L29,43 L40,33 L53,24 L53,48 Z' fill='url(%23cf)'/%3E%3Ccircle cx='53' cy='24' r='3.5' fill='%23f2a93b'/%3E%3C/svg%3E" />
+  <style>
+  /* ── RESET ── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #070d14;
+    color: #d4e8df;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── VARIABLES ── */
+  :root {
+    --bg:       #070d14;
+    --s1:       #0b1822;
+    --s2:       #0f1f2c;
+    --s3:       #132535;
+    --green:    #1f5f3f;
+    --green-l:  #2d7a52;
+    --green-ll: #4aab7a;
+    --amber:    #f2a93b;
+    --border:   rgba(255,255,255,0.06);
+    --ease:     cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ── NAV ── */
+  .nav {
+    position: sticky; top: 0; z-index: 200;
+    height: 66px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 36px;
+    background: rgba(7,13,20,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(45,122,82,0.14);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 11px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: 0.97rem; color: #fff;
+  }
+  .nav-logo svg { width: 34px; height: 34px; }
+  .nav-actions { display: flex; align-items: center; gap: 14px; }
+  .nav-back {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.83rem; color: #526e62;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-back:hover { color: #d4e8df; }
+  .nav-talk {
+    font-size: 0.8rem; font-weight: 600; color: #4aab7a;
+    background: rgba(45,122,82,0.1);
+    border: 1px solid rgba(45,122,82,0.28);
+    padding: 7px 18px; border-radius: 24px;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .nav-talk:hover { background: rgba(45,122,82,0.2); color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 60px 24px 44px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 55% at 50% 0%, rgba(45,122,82,0.13), transparent),
+      radial-gradient(ellipse 35% 25% at 85% 90%, rgba(242,169,59,0.05), transparent);
+  }
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(45,122,82,0.1);
+    border: 1px solid rgba(45,122,82,0.25);
+    color: #4aab7a;
+    font-size: 0.73rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 18px; border-radius: 24px; margin-bottom: 26px;
+  }
+  .hero-pill-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: #4aab7a;
+    animation: pulse 2.4s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+    font-weight: 800; color: #fff; line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hero h1 span {
+    background: linear-gradient(130deg, #4aab7a 0%, #2d7a52 60%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 0.97rem; color: #6a8e80;
+    max-width: 490px; margin: 0 auto 36px;
+  }
+  .hero-steps {
+    display: inline-flex; align-items: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 40px; padding: 5px 8px;
+    gap: 2px; flex-wrap: wrap; justify-content: center;
+  }
+  .hero-step {
+    display: flex; align-items: center; gap: 7px;
+    padding: 7px 14px; border-radius: 30px;
+    font-size: 0.79rem; color: #4a6e60;
+    transition: all 0.2s;
+  }
+  .hero-step.hi {
+    background: rgba(45,122,82,0.14);
+    color: #4aab7a;
+  }
+  .hero-step-n {
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.67rem; font-weight: 700;
+    background: rgba(45,122,82,0.18); color: #4aab7a;
+    flex-shrink: 0;
+  }
+  .hero-step.hi .hero-step-n { background: #2d7a52; color: #fff; }
+  .hero-step-sep { color: rgba(255,255,255,0.1); font-size: 0.8rem; padding: 0 2px; }
+
+  /* ── PAGE LAYOUT ── */
+  .page {
+    max-width: 1120px; margin: 0 auto;
+    padding: 0 24px 100px;
+    display: grid;
+    grid-template-columns: 1fr 352px;
+    gap: 26px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .page { grid-template-columns: 1fr; }
+  }
+
+  /* ── STEP LABELS ── */
+  .step-label {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 18px;
+  }
+  .step-label-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: linear-gradient(135deg, #2d7a52, #1a4e33);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.77rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(45,122,82,0.3);
+  }
+  .step-label-body {}
+  .step-label-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; font-weight: 700; color: #fff;
+    line-height: 1.2;
+  }
+  .step-label-sub { font-size: 0.77rem; color: #526e62; margin-top: 1px; }
+
+  /* ── BUILD PACKAGE CARDS ── */
+  .build-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 44px;
+  }
+  @media (max-width: 580px) { .build-grid { grid-template-columns: 1fr; } }
+
+  .pkg { position: relative; }
+  .pkg input[type="radio"] {
+    position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+  }
+
+  .pkg-card {
+    display: flex; flex-direction: column;
+    cursor: pointer;
+    background: var(--s1);
+    border: 1.5px solid rgba(255,255,255,0.065);
+    border-radius: 18px;
+    padding: 0 0 20px;
+    position: relative; overflow: hidden;
+    transition: border-color 0.22s var(--ease), box-shadow 0.22s var(--ease), transform 0.22s var(--ease), background 0.22s;
+    user-select: none;
+    height: 100%;
+  }
+  /* Top accent bar */
+  .pkg-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #1f5f3f, #2d7a52);
+    opacity: 0.28;
+    transition: opacity 0.22s, height 0.22s;
+    border-radius: 18px 18px 0 0;
+  }
+  .pkg-card:hover {
+    border-color: rgba(45,122,82,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.35);
+  }
+  .pkg input:checked + .pkg-card {
+    border-color: #2d7a52;
+    background: #0c1e2c;
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px rgba(74,171,122,0.25),
+      0 16px 48px rgba(45,122,82,0.18),
+      0 4px 18px rgba(0,0,0,0.45);
+  }
+  .pkg input:checked + .pkg-card::after {
+    opacity: 1; height: 4px;
+    background: linear-gradient(90deg, #2d7a52, #f2a93b);
+  }
+
+  .pkg-badge {
+    display: block; text-align: center;
+    background: linear-gradient(90deg, rgba(45,122,82,0.22), rgba(45,122,82,0.1));
+    border-bottom: 1px solid rgba(45,122,82,0.22);
+    color: #4aab7a; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 7px 16px;
+  }
+
+  .pkg-top {
+    padding: 26px 22px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .pkg-circle {
+    position: absolute; top: 20px; right: 18px;
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.14);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    background: transparent;
+  }
+  .pkg-circle::after {
+    content: '';
+    width: 8px; height: 8px; border-radius: 50%;
+    background: transparent;
+    transition: background 0.2s;
+  }
+  .pkg input:checked + .pkg-card .pkg-circle {
+    border-color: #2d7a52;
+    background: #2d7a52;
+  }
+  .pkg input:checked + .pkg-card .pkg-circle::after {
+    background: #fff;
+    width: 6px; height: 6px;
+  }
+
+  .pkg-name {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #4a7a60;
+    margin-bottom: 10px;
+  }
+  .pkg-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem; font-weight: 800; color: #fff; line-height: 1;
+    margin-bottom: 3px;
+  }
+  .pkg-price sup {
+    font-size: 1.1rem; color: #4aab7a;
+    vertical-align: super; margin-right: 2px;
+  }
+  .pkg-price-note { font-size: 0.73rem; color: #3d6050; }
+
+  .pkg-features {
+    list-style: none;
+    padding: 0 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    flex: 1;
+  }
+  .pkg-features li {
+    display: flex; align-items: flex-start; gap: 9px;
+    font-size: 0.81rem; color: #6a8e80; line-height: 1.4;
+  }
+  .pkg-features li .chk,
+  .care-features li .chk {
+    width: 15px; height: 15px; border-radius: 50%;
+    background: rgba(45,122,82,0.14);
+    border: 1px solid rgba(45,122,82,0.28);
+    flex-shrink: 0; margin-top: 2px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pkg-features li .chk svg,
+  .care-features li .chk svg {
+    width: 8px; height: 8px;
+    stroke: #2d7a52; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  /* ── CARE PLAN CARDS ── */
+  .care-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 10px;
+  }
+  @media (max-width: 580px) { .care-grid { grid-template-columns: 1fr; } }
+
+  .care { position: relative; }
+  .care input[type="radio"] {
+    position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+  }
+
+  .care-card {
+    display: flex; flex-direction: column;
+    cursor: pointer;
+    background: var(--s1);
+    border: 1.5px solid rgba(255,255,255,0.065);
+    border-radius: 18px;
+    padding: 0 0 20px;
+    position: relative; overflow: hidden;
+    transition: border-color 0.22s var(--ease), box-shadow 0.22s var(--ease), transform 0.22s var(--ease), background 0.22s;
+    user-select: none;
+    height: 100%;
+  }
+  .care-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #1f5f3f, #2d7a52);
+    opacity: 0.28;
+    transition: opacity 0.22s, height 0.22s;
+    border-radius: 18px 18px 0 0;
+  }
+  .care-card:hover {
+    border-color: rgba(45,122,82,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.35);
+  }
+  .care input:checked + .care-card {
+    border-color: #2d7a52;
+    background: #0c1e2c;
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px rgba(74,171,122,0.25),
+      0 16px 48px rgba(45,122,82,0.18),
+      0 4px 18px rgba(0,0,0,0.45);
+  }
+  .care input:checked + .care-card::after {
+    opacity: 1; height: 4px;
+    background: linear-gradient(90deg, #2d7a52, #f2a93b);
+  }
+  .care input:checked + .care-card .care-sel {
+    border-color: #2d7a52;
+    background: #2d7a52;
+  }
+  .care input:checked + .care-card .care-sel::after {
+    background: #fff;
+    width: 6px; height: 6px;
+  }
+
+  .care-badge {
+    display: block; text-align: center;
+    background: linear-gradient(90deg, rgba(242,169,59,0.16), rgba(242,169,59,0.07));
+    border-bottom: 1px solid rgba(242,169,59,0.2);
+    color: #f2a93b; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 7px 16px;
+  }
+
+  .care-top {
+    padding: 22px 22px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .care-sel {
+    position: absolute; top: 20px; right: 18px;
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.14);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; background: transparent;
+  }
+  .care-sel::after {
+    content: '';
+    width: 8px; height: 8px; border-radius: 50%;
+    background: transparent; transition: all 0.2s;
+  }
+
+  .care-name {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #4a7a60;
+    margin-bottom: 10px;
+  }
+  .care-price {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem; font-weight: 800; color: #fff; line-height: 1;
+    margin-bottom: 3px;
+  }
+  .care-price sup { font-size: 1.1rem; color: #4aab7a; vertical-align: super; margin-right: 2px; }
+  .care-price-mo { font-size: 1rem; color: #3d9962; font-weight: 600; }
+  .care-price-note { font-size: 0.73rem; color: #3d6050; }
+
+  .care-features {
+    list-style: none;
+    padding: 0 22px;
+    display: flex; flex-direction: column; gap: 8px;
+    flex: 1;
+  }
+  .care-features li {
+    display: flex; align-items: flex-start; gap: 9px;
+    font-size: 0.81rem; color: #6a8e80; line-height: 1.4;
+  }
+
+  /* ── SUMMARY SIDEBAR ── */
+  .sidebar { position: sticky; top: 84px; }
+
+  .summary {
+    background: linear-gradient(160deg, #0f1e2c 0%, #0a1720 100%);
+    border: 1px solid rgba(45,122,82,0.18);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+      0 24px 64px rgba(0,0,0,0.45),
+      0 0 0 1px rgba(255,255,255,0.025),
+      inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+
+  .sum-head {
+    padding: 20px 22px 16px;
+    background: rgba(45,122,82,0.05);
+    border-bottom: 1px solid rgba(45,122,82,0.1);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .sum-head-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem; font-weight: 700;
+    color: #4a7a5e; letter-spacing: 0.09em; text-transform: uppercase;
+  }
+  .sum-head-free {
+    font-size: 0.7rem; color: #2d7a52;
+    background: rgba(45,122,82,0.12); border: 1px solid rgba(45,122,82,0.22);
+    padding: 3px 10px; border-radius: 20px; font-weight: 600;
+  }
+
+  .sum-body { padding: 18px 22px; }
+
+  .sum-row {
+    display: flex; flex-direction: column;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .sum-row:last-child { border-bottom: none; }
+  .sum-row-top {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 2px;
+  }
+  .sum-row-label { font-size: 0.75rem; color: #3d6050; font-weight: 500; }
+  .sum-row-val { font-size: 0.88rem; font-weight: 700; color: #fff; }
+  .sum-row-name { font-size: 0.82rem; color: #8ab8a0; }
+  .sum-row-detail { font-size: 0.73rem; color: #2f5040; }
+
+  .sum-divider {
+    height: 1px;
+    background: linear-gradient(90deg, rgba(45,122,82,0.25), rgba(45,122,82,0.05));
+    margin: 4px 0;
+  }
+
+  .sum-total {
+    padding: 16px 22px;
+    background: rgba(255,255,255,0.02);
+    border-top: 1px solid rgba(45,122,82,0.1);
+  }
+  .sum-total-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 5px;
+  }
+  .sum-total-label {
+    font-size: 0.8rem; font-weight: 600; color: #6a9880;
+  }
+  .sum-total-amt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.1rem; font-weight: 800; color: #fff; line-height: 1;
+    transition: transform 0.2s var(--ease);
+  }
+  .sum-total-amt.pop {
+    animation: numPop 0.25s var(--ease) both;
+  }
+  @keyframes numPop {
+    0%   { transform: scale(1); }
+    45%  { transform: scale(1.07); }
+    100% { transform: scale(1); }
+  }
+  .sum-total-sup { font-size: 1rem; color: #4aab7a; }
+  .sum-recurring { font-size: 0.73rem; color: #2f5040; text-align: right; }
+
+  .sum-cta { padding: 18px 22px 16px; }
+
+  .cta-btn {
+    display: flex; align-items: center; justify-content: center; gap: 9px;
+    width: 100%;
+    background: linear-gradient(135deg, #2d7a52 0%, #1a4e33 100%);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.97rem; font-weight: 700;
+    padding: 16px 22px; border-radius: 13px;
+    border: none; cursor: pointer; text-decoration: none;
+    transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    box-shadow: 0 4px 22px rgba(45,122,82,0.38), inset 0 1px 0 rgba(255,255,255,0.13);
+    position: relative; overflow: hidden;
+  }
+  .cta-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.07) 0%, transparent 100%);
+    border-radius: inherit;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 34px rgba(45,122,82,0.48), inset 0 1px 0 rgba(255,255,255,0.13);
+  }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-arrow { transition: transform 0.2s; display: flex; align-items: center; }
+  .cta-btn:hover .cta-arrow { transform: translateX(3px); }
+
+  .cta-note {
+    text-align: center; font-size: 0.73rem; color: #2f5040;
+    margin-top: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+  }
+
+  .sum-guarantees {
+    padding: 14px 22px 18px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .guarantee {
+    display: flex; align-items: flex-start; gap: 9px;
+    font-size: 0.77rem; color: #3d6050; line-height: 1.4;
+  }
+  .guarantee-ico { color: #2d7a52; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── NEXT STEPS ── */
+  .next-steps {
+    margin-top: 14px;
+    background: var(--s1);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 17px 20px;
+  }
+  .next-title {
+    font-size: 0.7rem; font-weight: 700; color: #3d6050;
+    text-transform: uppercase; letter-spacing: 0.09em;
+    margin-bottom: 14px;
+  }
+  .next-item {
+    display: flex; gap: 11px; align-items: flex-start;
+    margin-bottom: 11px;
+  }
+  .next-item:last-child { margin-bottom: 0; }
+  .next-dot {
+    width: 21px; height: 21px; border-radius: 50%;
+    background: rgba(45,122,82,0.12);
+    border: 1px solid rgba(45,122,82,0.25);
+    color: #3d9962; font-size: 0.67rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .next-text { font-size: 0.77rem; color: #3d6050; line-height: 1.45; }
+  .next-text strong { color: #8ab0a0; font-weight: 600; }
+
+  /* ── MOBILE STICKY BAR ── */
+  .mobile-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 150;
+    padding: 10px 18px;
+    background: rgba(7,13,20,0.97);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(45,122,82,0.18);
+    align-items: center; justify-content: space-between; gap: 14px;
+  }
+  .mobile-price { display: flex; flex-direction: column; }
+  .mobile-price-today {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem; font-weight: 800; color: #fff; line-height: 1;
+  }
+  .mobile-price-sub { font-size: 0.7rem; color: #3d6050; margin-top: 2px; }
+  .mobile-cta-btn {
+    background: linear-gradient(135deg, #2d7a52, #1a4e33);
+    color: #fff; font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: 0.88rem;
+    padding: 12px 22px; border-radius: 12px;
+    border: none; cursor: pointer; text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(45,122,82,0.35);
+  }
+  @media (max-width: 900px) {
+    .mobile-bar { display: flex; }
+    body { padding-bottom: 72px; }
+  }
+
+  /* ── SOCIAL PROOF ── */
+  .proof {
+    background: #060c12;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding: 76px 24px;
+  }
+  .proof-inner { max-width: 940px; margin: 0 auto; }
+  .proof-stars { color: #f2a93b; font-size: 1.2rem; letter-spacing: 3px; margin-bottom: 6px; text-align: center; }
+  .proof-sub { font-size: 0.82rem; color: #3d6050; margin-bottom: 44px; text-align: center; }
+  .proof-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    margin-bottom: 44px;
+  }
+  @media (max-width: 640px) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof-card {
+    background: var(--s1);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px; padding: 22px;
+    position: relative;
+  }
+  .proof-card::before {
+    content: '\201C';
+    position: absolute; top: 14px; right: 18px;
+    font-size: 2.6rem; color: rgba(45,122,82,0.1);
+    font-family: Georgia, serif; line-height: 1;
+  }
+  .proof-quote { font-size: 0.86rem; color: #6a8e80; line-height: 1.65; margin-bottom: 15px; font-style: italic; }
+  .proof-author { font-size: 0.8rem; color: #3d9962; font-weight: 600; }
+  .proof-loc { font-size: 0.73rem; color: #2a4535; }
+  .proof-badges {
+    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+  }
+  .proof-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--s1); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px; padding: 11px 18px;
+    font-size: 0.78rem; color: #3d6050;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    max-width: 680px; margin: 0 auto;
+    padding: 72px 24px;
+  }
+  .faq-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.45rem; font-weight: 700; color: #fff;
+    text-align: center; margin-bottom: 34px;
+  }
+  .faq-item {
+    background: var(--s1);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px; margin-bottom: 9px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: rgba(45,122,82,0.22); }
+  .faq-item[open] { border-color: rgba(45,122,82,0.28); }
+  .faq-item summary {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 17px 20px; gap: 14px;
+    font-weight: 600; font-size: 0.88rem; color: #c0d8cc;
+    cursor: pointer; list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-tog {
+    width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(45,122,82,0.1);
+    border: 1px solid rgba(45,122,82,0.22);
+    color: #3d9962; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    line-height: 1;
+  }
+  .faq-item[open] summary .faq-tog { transform: rotate(45deg); background: rgba(45,122,82,0.2); }
+  .faq-body {
+    padding: 0 20px 16px;
+    font-size: 0.84rem; color: #527060; line-height: 1.7;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid rgba(255,255,255,0.04);
+    padding: 26px 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px;
+    font-size: 0.78rem; color: #2a4535;
+  }
+  .footer a { color: #2a4535; text-decoration: none; transition: color 0.2s; }
+  .footer a:hover { color: #4aab7a; }
+  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  /* ── PATH CHOOSER ── */
+  .path-chooser {
+    max-width: 660px; margin: 0 auto;
+    padding: 0 24px 44px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  @media (max-width: 580px) { .path-chooser { grid-template-columns: 1fr; } }
+
+  .path-chooser-label {
+    max-width: 660px; margin: 0 auto;
+    padding: 0 24px 14px;
+    text-align: center;
+    font-size: 0.78rem; font-weight: 600;
+    color: #3d6050; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  .path-card {
+    cursor: pointer; position: relative; overflow: hidden;
+    background: var(--s1);
+    border: 1.5px solid rgba(255,255,255,0.065);
+    border-radius: 16px; padding: 22px 22px 20px;
+    transition: border-color 0.22s var(--ease), transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+    user-select: none;
+  }
+  .path-card::after {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #1f5f3f, #2d7a52);
+    opacity: 0.25; border-radius: 16px 16px 0 0;
+    transition: opacity 0.2s;
+  }
+  .path-card:hover { border-color: rgba(45,122,82,0.3); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,0,0,0.3); }
+  .path-card.active {
+    border-color: #2d7a52; background: #0c1e2c;
+    box-shadow: 0 0 0 1px rgba(74,171,122,0.2), 0 14px 42px rgba(45,122,82,0.15);
+    transform: translateY(-3px);
+  }
+  .path-card.active::after { opacity: 1; background: linear-gradient(90deg, #2d7a52, #f2a93b); }
+  .path-card.pulse-error { animation: pathShake 0.4s var(--ease); border-color: rgba(242,169,59,0.5); }
+  @keyframes pathShake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+
+  .path-check {
+    position: absolute; top: 16px; right: 16px;
+    width: 22px; height: 22px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.12); background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .path-card.active .path-check { background: #2d7a52; border-color: #2d7a52; }
+  .path-card.active .path-check::after {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%; background: #fff;
+    display: block;
+  }
+  .path-icon { font-size: 1.7rem; margin-bottom: 10px; }
+  .path-title { font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 5px; line-height: 1.3; }
+  .path-desc { font-size: 0.78rem; color: #526e62; line-height: 1.5; }
+
+  /* ── INFO FORM ── */
+  .form-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px; margin-top: 18px;
+  }
+  @media (max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
+  .form-field.full { grid-column: 1 / -1; }
+
+  .form-label {
+    font-size: 0.7rem; font-weight: 600; color: #3d6050;
+    text-transform: uppercase; letter-spacing: 0.07em;
+  }
+  .form-label span { color: #2d7a52; }
+
+  .form-input {
+    background: var(--s2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px; padding: 11px 13px;
+    color: #c0d8cc; font-size: 0.87rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .form-input:focus { border-color: rgba(45,122,82,0.5); box-shadow: 0 0 0 3px rgba(45,122,82,0.12); }
+  .form-input::placeholder { color: #2f4a40; }
+  .form-input.error { border-color: rgba(220,80,80,0.45); box-shadow: 0 0 0 3px rgba(220,80,80,0.09); }
+  textarea.form-input { resize: vertical; min-height: 72px; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero  { animation: fadeUp 0.5s var(--ease) both; }
+  .page  { animation: fadeUp 0.5s 0.08s var(--ease) both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ng" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#2a7050"/><stop offset="1" stop-color="#0a1c11"/>
+          </linearGradient>
+          <linearGradient id="ncf" x1="0" y1="19" x2="0" y2="33" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#2d7a52" stop-opacity="0.45"/><stop offset="1" stop-color="#2d7a52" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="44" height="44" rx="10" fill="url(#ng)"/>
+        <rect x="0" y="0" width="44" height="1.5" rx="1" fill="rgba(255,255,255,0.13)"/>
+        <rect x="5" y="7" width="34" height="30" rx="4.5" fill="rgba(0,0,0,0.32)" stroke="rgba(255,255,255,0.09)" stroke-width="0.7"/>
+        <rect x="5" y="7" width="34" height="10" rx="4.5" fill="rgba(0,0,0,0.22)"/>
+        <rect x="5" y="12" width="34" height="5" fill="rgba(0,0,0,0.22)"/>
+        <line x1="6" y1="17" x2="38" y2="17" stroke="rgba(255,255,255,0.07)" stroke-width="0.6"/>
+        <circle cx="10.5" cy="12" r="1.6" fill="#e05252" opacity="0.9"/>
+        <circle cx="15.5" cy="12" r="1.6" fill="#e0b352" opacity="0.9"/>
+        <circle cx="20.5" cy="12" r="1.6" fill="#52b96a" opacity="0.9"/>
+        <polyline points="8,32 13,27 19,29.5 25.5,23 34,18" stroke="#2d7a52" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M8,32 L13,27 L19,29.5 L25.5,23 L34,18 L34,32 Z" fill="url(#ncf)"/>
+        <circle cx="34" cy="18" r="2.3" fill="#f2a93b"/>
+        <polyline points="32,15.5 34,13 36,15.5" stroke="#f2a93b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      Summit Webs
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to site
+      </a>
+      <a href="index.html#contact" class="nav-talk">Talk to us first</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-pill"><span class="hero-pill-dot"></span>Free mockup first — see it before you pay</div>
+    <h1>Let's Build Your <span>Website.</span></h1>
+    <p class="hero-sub">Pick your package below. We build a free mockup — you approve it, then we go live in 7–14 days.</p>
+    <div class="hero-steps">
+      <div class="hero-step hi"><span class="hero-step-n">1</span>Choose your build</div>
+      <span class="hero-step-sep">›</span>
+      <div class="hero-step hi"><span class="hero-step-n">2</span>Pick a care plan</div>
+      <span class="hero-step-sep">›</span>
+      <div class="hero-step"><span class="hero-step-n">3</span>Your info</div>
+      <span class="hero-step-sep">›</span>
+      <div class="hero-step"><span class="hero-step-n">4</span>Pay &amp; go live</div>
+    </div>
+  </section>
+
+  <!-- PATH CHOOSER -->
+  <p class="path-chooser-label">Where are you at?</p>
+  <div class="path-chooser" id="pathChooser">
+    <div class="path-card" id="path-mockup" onclick="choosePath('mockup')">
+      <div class="path-check"></div>
+      <div class="path-icon">✅</div>
+      <div class="path-title">I loved the mockup — ready to pay</div>
+      <div class="path-desc">You've already seen your site design and you're ready to lock it in and go.</div>
+    </div>
+    <div class="path-card" id="path-trust" onclick="choosePath('trust')">
+      <div class="path-check"></div>
+      <div class="path-icon">🤝</div>
+      <div class="path-title">No mockup needed — I trust you</div>
+      <div class="path-desc">You're ready to move forward without a preview first. We'll start building right away.</div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div class="page">
+
+    <!-- LEFT: SELECTORS -->
+    <div>
+
+      <!-- STEP 1 -->
+      <div class="step-label">
+        <div class="step-label-num">1</div>
+        <div class="step-label-body">
+          <div class="step-label-title">Choose your site build</div>
+          <div class="step-label-sub">One-time fee — includes free mockup before you pay anything</div>
+        </div>
+      </div>
+
+      <div class="build-grid" id="buildGrid">
+
+        <!-- Basic -->
+        <div class="pkg">
+          <input type="radio" name="build" id="build-basic" value="basic" data-price="97" data-label="Basic Site">
+          <label class="pkg-card" for="build-basic">
+            <div class="pkg-top">
+              <div class="pkg-circle"></div>
+              <div class="pkg-name">Basic</div>
+              <div class="pkg-price"><sup>$</sup>97</div>
+              <div class="pkg-price-note">one-time build fee</div>
+            </div>
+            <ul class="pkg-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>1-page site — hero, services &amp; contact</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Click-to-call &amp; contact form</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Google Maps embed</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Mobile-optimised &amp; fast</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Free mockup — you approve it first</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Live in ~1 week</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Pro (default) -->
+        <div class="pkg">
+          <input type="radio" name="build" id="build-pro" value="pro" data-price="147" data-label="Pro Site" checked>
+          <label class="pkg-card" for="build-pro">
+            <div class="pkg-badge">Most Popular</div>
+            <div class="pkg-top">
+              <div class="pkg-circle"></div>
+              <div class="pkg-name">Pro</div>
+              <div class="pkg-price"><sup>$</sup>147</div>
+              <div class="pkg-price-note">one-time build fee</div>
+            </div>
+            <ul class="pkg-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Up to 5 pages — home, services, gallery, about, contact</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>We write all your copy — just answer a few questions</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Photo gallery to show off your work</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Quote request &amp; booking form</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>On-page SEO + Google Business Profile setup</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Google Analytics &amp; Maps setup</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Free mockup — you approve it first</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Live in 7–14 days</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Premium -->
+        <div class="pkg">
+          <input type="radio" name="build" id="build-premium" value="premium" data-price="197" data-label="Premium Site">
+          <label class="pkg-card" for="build-premium">
+            <div class="pkg-top">
+              <div class="pkg-circle"></div>
+              <div class="pkg-name">Premium</div>
+              <div class="pkg-price"><sup>$</sup>197</div>
+              <div class="pkg-price-note">one-time build fee</div>
+            </div>
+            <ul class="pkg-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Everything in Pro</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>SEO blog — articles that rank on Google over time</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Online booking calendar integration</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Automated review-request system after each job</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Multi-city &amp; multi-service landing pages</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Competitor research included</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Free mockup — you approve it first</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Live in ~2 weeks</li>
+            </ul>
+          </label>
+        </div>
+
+      </div><!-- /build-grid -->
+
+      <!-- STEP 2 -->
+      <div class="step-label">
+        <div class="step-label-num">2</div>
+        <div class="step-label-body">
+          <div class="step-label-title">Pick your monthly care plan</div>
+          <div class="step-label-sub">Keeps your site live, secure, and growing — cancel anytime</div>
+        </div>
+      </div>
+
+      <div class="care-grid" id="careGrid">
+
+        <!-- Essential -->
+        <div class="care">
+          <input type="radio" name="care" id="care-essential" value="essential" data-price="50" data-label="Essential">
+          <label class="care-card" for="care-essential">
+            <div class="care-top">
+              <div class="care-sel"></div>
+              <div class="care-name">Essential</div>
+              <div class="care-price"><sup>$</sup>50<span class="care-price-mo">/mo</span></div>
+              <div class="care-price-note">monthly care plan</div>
+            </div>
+            <ul class="care-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Hosting &amp; SSL certificate</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Weekly security monitoring</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Automatic backups</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Uptime monitoring</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>1 content edit per month</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Growth (default) -->
+        <div class="care">
+          <input type="radio" name="care" id="care-growth" value="growth" data-price="100" data-label="Growth" checked>
+          <label class="care-card" for="care-growth">
+            <div class="care-badge">Best Value</div>
+            <div class="care-top">
+              <div class="care-sel"></div>
+              <div class="care-name">Growth</div>
+              <div class="care-price"><sup>$</sup>100<span class="care-price-mo">/mo</span></div>
+              <div class="care-price-note">monthly care plan</div>
+            </div>
+            <ul class="care-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Everything in Essential</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Up to 4 edits per month</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>1 local SEO blog post/month <em>(we write &amp; publish it)</em></li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Monthly Google Analytics report</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Quarterly strategy call</li>
+            </ul>
+          </label>
+        </div>
+
+        <!-- Pro -->
+        <div class="care">
+          <input type="radio" name="care" id="care-pro" value="pro-care" data-price="150" data-label="Pro Care">
+          <label class="care-card" for="care-pro">
+            <div class="care-top">
+              <div class="care-sel"></div>
+              <div class="care-name">Pro</div>
+              <div class="care-price"><sup>$</sup>150<span class="care-price-mo">/mo</span></div>
+              <div class="care-price-note">monthly care plan</div>
+            </div>
+            <ul class="care-features">
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Everything in Growth</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Managed Google Ads campaigns</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Dedicated ad landing page</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Weekly performance reports</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>Unlimited edit requests</li>
+              <li><span class="chk"><svg viewBox="0 0 10 8"><polyline points="1,4 3.5,6.5 9,1"/></svg></span>48-hour priority turnaround</li>
+            </ul>
+          </label>
+        </div>
+
+      </div><!-- /care-grid -->
+
+      <!-- STEP 3: YOUR INFO -->
+      <div class="step-label" id="infoStep" style="margin-top: 32px;">
+        <div class="step-label-num">3</div>
+        <div class="step-label-body">
+          <div class="step-label-title">Your business info</div>
+          <div class="step-label-sub">So we know where to reach you and what to build</div>
+        </div>
+      </div>
+      <div class="form-grid" id="infoForm">
+        <div class="form-field">
+          <label class="form-label" for="fieldBiz">Business Name <span>*</span></label>
+          <input class="form-input" type="text" id="fieldBiz" name="business" placeholder="e.g. Trevino's Lawn Care" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="fieldName">Your Name <span>*</span></label>
+          <input class="form-input" type="text" id="fieldName" name="name" placeholder="e.g. Mike Trevino" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="fieldPhone">Phone Number <span>*</span></label>
+          <input class="form-input" type="tel" id="fieldPhone" name="phone" placeholder="(216) 555-0100" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="fieldEmail">Email Address <span>*</span></label>
+          <input class="form-input" type="email" id="fieldEmail" name="email" placeholder="you@example.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="fieldCity">City / Service Area</label>
+          <input class="form-input" type="text" id="fieldCity" name="city" placeholder="e.g. Twinsburg, Hudson, Solon…">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="fieldWebsite">Current Website (if any)</label>
+          <input class="form-input" type="text" id="fieldWebsite" name="website" placeholder="e.g. myoldsite.com">
+        </div>
+        <div class="form-field full">
+          <label class="form-label" for="fieldNotes">Anything else we should know?</label>
+          <textarea class="form-input" id="fieldNotes" name="notes" placeholder="e.g. I have photos ready, I want to keep my current domain, etc."></textarea>
+        </div>
+      </div>
+
+    </div><!-- /left -->
+
+    <!-- RIGHT: SUMMARY -->
+    <div class="sidebar">
+      <div class="summary">
+
+        <div class="sum-head">
+          <span class="sum-head-title">Your Order</span>
+          <span class="sum-head-free" id="sumHeadBadge">Choose a path</span>
+        </div>
+
+        <div class="sum-body">
+          <div class="sum-row">
+            <div class="sum-row-top">
+              <span class="sum-row-label">Build package</span>
+              <span class="sum-row-val" id="sumBuildPrice">$147</span>
+            </div>
+            <span class="sum-row-name" id="sumBuildLabel">Pro Site</span>
+            <span class="sum-row-detail">one-time fee</span>
+          </div>
+          <div class="sum-divider"></div>
+          <div class="sum-row">
+            <div class="sum-row-top">
+              <span class="sum-row-label">Monthly care plan</span>
+              <span class="sum-row-val" id="sumCarePrice">$100/mo</span>
+            </div>
+            <span class="sum-row-name" id="sumCareLabel">Growth</span>
+            <span class="sum-row-detail">billed monthly after launch</span>
+          </div>
+        </div>
+
+        <div class="sum-total">
+          <div class="sum-total-row">
+            <span class="sum-total-label">Due today</span>
+            <span class="sum-total-amt" id="sumTotal"><sup class="sum-total-sup">$</sup>147</span>
+          </div>
+          <div class="sum-recurring" id="sumRecurring">then $100/mo after your site goes live</div>
+        </div>
+
+        <div class="sum-cta">
+          <a href="#" id="ctaBtn" class="cta-btn" onclick="handleBuy(event)">
+            Choose a path above to continue
+            <span class="cta-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </a>
+          <p class="cta-note" id="ctaNote">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span id="ctaNoteText">Select a path above first</span>
+          </p>
+        </div>
+
+        <div class="sum-guarantees">
+          <div class="guarantee">
+            <span class="guarantee-ico">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Free mockup — see the design before committing
+          </div>
+          <div class="guarantee">
+            <span class="guarantee-ico">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            No contracts — cancel your monthly plan anytime
+          </div>
+          <div class="guarantee">
+            <span class="guarantee-ico">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Live in 7–14 days from kickoff
+          </div>
+          <div class="guarantee">
+            <span class="guarantee-ico">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Built 100% for landscaping &amp; lawn care
+          </div>
+        </div>
+
+      </div><!-- /summary -->
+
+      <!-- WHAT HAPPENS NEXT -->
+      <div class="next-steps">
+        <div class="next-title">What happens next</div>
+        <div class="next-item">
+          <div class="next-dot">1</div>
+          <div class="next-text" id="nextStep1"><strong>You pay the build fee</strong> — secure checkout via Stripe.</div>
+        </div>
+        <div class="next-item">
+          <div class="next-dot">2</div>
+          <div class="next-text" id="nextStep2"><strong>Choose a path above</strong> to see your next steps.</div>
+        </div>
+        <div class="next-item">
+          <div class="next-dot">3</div>
+          <div class="next-text" id="nextStep3"><strong>We build your full site</strong> — 7–14 days from payment.</div>
+        </div>
+        <div class="next-item">
+          <div class="next-dot">4</div>
+          <div class="next-text"><strong>We launch your site</strong> — and your care plan kicks in at $<span id="nextCareCost">100</span>/mo.</div>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+  </div><!-- /page -->
+
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-title">Quick Answers</div>
+
+    <details class="faq-item">
+      <summary>Do I actually see the design before I pay? <span class="faq-tog">+</span></summary>
+      <div class="faq-body">Yes — always. We build a full homepage mockup before you pay a single dollar. You review it, we revise if needed, and only once you're happy do we send an invoice and go live.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What if I don't like what you build? <span class="faq-tog">+</span></summary>
+      <div class="faq-body">Tell us and we'll revise it. Our mockup process includes two rounds of changes. If after revisions it's still not a fit, you walk away — no charge, no awkwardness.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I cancel the monthly plan? <span class="faq-tog">+</span></summary>
+      <div class="faq-body">Yes, any time. No contracts or cancellation fees. Just let us know 30 days before your next billing date and we'll wrap things up — including handing over your files if you want them.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does the monthly care plan actually include? <span class="faq-tog">+</span></summary>
+      <div class="faq-body">Essential ($50/mo): hosting, SSL, security monitoring, automatic backups, and 1 edit/month. Growth ($100/mo) adds 4 edits, an SEO blog post, and a monthly analytics report. Pro ($150/mo) adds managed Google Ads, unlimited edits, and priority support.</div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do you only work with landscaping companies? <span class="faq-tog">+</span></summary>
+      <div class="faq-body">Yes — we specialize in landscaping, lawn care, tree service, and snow removal companies in Northeast Ohio. Every template, every line of copy, and every SEO strategy is tuned for your industry and local market.</div>
+    </details>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 Summit Webs · Northeast Ohio Web Design</span>
+    <div class="footer-links">
+      <a href="index.html">Main Site</a>
+      <a href="index.html#pricing">All Pricing</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
+  <div class="mobile-bar" id="mobileBar">
+    <div class="mobile-price">
+      <div class="mobile-price-today" id="mobileTotal">$147</div>
+      <div class="mobile-price-sub" id="mobileSub">Pro Site + $100/mo</div>
+    </div>
+    <a href="#" class="mobile-cta-btn" onclick="handleBuy(event)">Get My Free Mockup →</a>
+  </div>
+
+  <script>
+  // ── STRIPE PAYMENT LINKS ────────────────────────────────────────────────────
+  // Create these at: https://dashboard.stripe.com/payment-links
+  // Set each link's product to the corresponding one-time build package.
+  // To also collect the monthly care plan, either:
+  //   (a) add a recurring price item to the same Stripe Payment Link, or
+  //   (b) set up the subscription manually in Stripe Dashboard after launch.
+  // Tip: append ?prefilled_email=EMAIL to any link — Stripe will pre-fill the
+  //      customer's email at checkout automatically.
+  const STRIPE_LINKS = {
+    basic:   'https://buy.stripe.com/aFa9AS1Q5f36arc2Bh00000',
+    pro:     'https://buy.stripe.com/fZudR8fGVbQUbvgdfV00001',
+    premium: 'https://buy.stripe.com/6oU4gyeCRbQU7f00t900002',
+  };
+
+  // ── Path selection ──────────────────────────────────────────────────────────
+  let selectedPath = null;
+
+  function choosePath(path) {
+    selectedPath = path;
+    document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+    document.getElementById('path-' + path).classList.add('active');
+    updateCta();
+    updateNextSteps();
+  }
+
+  function updateNextSteps() {
+    const care = document.querySelector('input[name="care"]:checked');
+    const cp   = care ? parseInt(care.dataset.price) : 100;
+    document.getElementById('nextCareCost').textContent = cp;
+
+    if (selectedPath === 'mockup') {
+      document.getElementById('nextStep1').innerHTML = '<strong>You pay the build fee</strong> — secure Stripe checkout.';
+      document.getElementById('nextStep2').innerHTML = '<strong>Share your content</strong> — photos, logo, anything you have.';
+      document.getElementById('nextStep3').innerHTML = '<strong>We build your approved design</strong> — 7–14 days.';
+    } else if (selectedPath === 'trust') {
+      document.getElementById('nextStep1').innerHTML = '<strong>You pay the build fee</strong> — secure Stripe checkout.';
+      document.getElementById('nextStep2').innerHTML = '<strong>We send a quick questionnaire</strong> — takes about 5 minutes.';
+      document.getElementById('nextStep3').innerHTML = '<strong>We build your site</strong> — 7–14 days from payment.';
+    }
+  }
+
+  function updateCta() {
+    const ctaBtn  = document.getElementById('ctaBtn');
+    const noteEl  = document.getElementById('ctaNoteText');
+    const badge   = document.getElementById('sumHeadBadge');
+    const mobileCta = document.querySelector('.mobile-cta-btn');
+
+    if (!selectedPath) return;
+
+    const arrow = '<span class="cta-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>';
+
+    if (selectedPath === 'mockup') {
+      ctaBtn.innerHTML  = 'Pay Now — Start Building ' + arrow;
+      noteEl.textContent = 'Secure checkout · Your order info is sent to us first';
+      badge.textContent  = 'Mockup approved ✓';
+      if (mobileCta) mobileCta.textContent = 'Pay Now — Start Building →';
+    } else {
+      ctaBtn.innerHTML  = 'Pay Now — Let\'s Build Your Site ' + arrow;
+      noteEl.textContent = 'Secure checkout · We\'ll start right away';
+      badge.textContent  = 'No mockup needed';
+      if (mobileCta) mobileCta.textContent = 'Pay Now — Let\'s Build →';
+    }
+  }
+
+  // ── URL param pre-selection ─────────────────────────────────────────────────
+  (function () {
+    const p = new URLSearchParams(window.location.search);
+    const plan = p.get('plan');
+    const care = p.get('care');
+    if (plan) {
+      const inp = document.querySelector(`input[name="build"][value="${plan}"]`);
+      if (inp) inp.checked = true;
+    }
+    if (care) {
+      const inp = document.querySelector(`input[name="care"][value="${care}"]`);
+      if (inp) inp.checked = true;
+    }
+  })();
+
+  // ── Live summary update ─────────────────────────────────────────────────────
+  const buildInputs = document.querySelectorAll('input[name="build"]');
+  const careInputs  = document.querySelectorAll('input[name="care"]');
+
+  function updateSummary() {
+    const build = document.querySelector('input[name="build"]:checked');
+    const care  = document.querySelector('input[name="care"]:checked');
+    if (!build || !care) return;
+
+    const bp = parseInt(build.dataset.price);
+    const cp = parseInt(care.dataset.price);
+
+    document.getElementById('sumBuildLabel').textContent = build.dataset.label;
+    document.getElementById('sumBuildPrice').textContent = '$' + bp;
+    document.getElementById('sumCareLabel').textContent  = care.dataset.label;
+    document.getElementById('sumCarePrice').textContent  = '$' + cp + '/mo';
+    document.getElementById('sumRecurring').textContent  = 'then $' + cp + '/mo after your site goes live';
+
+    const totalEl = document.getElementById('sumTotal');
+    totalEl.innerHTML = '<sup class="sum-total-sup">$</sup>' + bp;
+    totalEl.classList.remove('pop');
+    void totalEl.offsetWidth;
+    totalEl.classList.add('pop');
+
+    document.getElementById('mobileTotal').textContent = '$' + bp;
+    document.getElementById('mobileSub').textContent   = build.dataset.label + ' + $' + cp + '/mo';
+
+    updateNextSteps();
+  }
+
+  buildInputs.forEach(i => i.addEventListener('change', updateSummary));
+  careInputs.forEach(i  => i.addEventListener('change', updateSummary));
+  updateSummary();
+
+  // ── Form validation ─────────────────────────────────────────────────────────
+  const REQUIRED_FIELDS = ['fieldBiz', 'fieldName', 'fieldPhone', 'fieldEmail'];
+
+  function validateForm() {
+    let valid = true;
+    REQUIRED_FIELDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) {
+        el.classList.add('error');
+        valid = false;
+      } else {
+        el.classList.remove('error');
+      }
+    });
+    return valid;
+  }
+
+  REQUIRED_FIELDS.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => el.classList.remove('error'));
+  });
+
+  // ── Payment handler ─────────────────────────────────────────────────────────
+  function handleBuy(e) {
+    e.preventDefault();
+
+    // Must choose a path first
+    if (!selectedPath) {
+      const chooser = document.getElementById('pathChooser');
+      chooser.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      document.querySelectorAll('.path-card').forEach(c => {
+        c.classList.add('pulse-error');
+        setTimeout(() => c.classList.remove('pulse-error'), 600);
+      });
+      return;
+    }
+
+    // Must fill required info
+    if (!validateForm()) {
+      document.getElementById('infoStep').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    const build   = document.querySelector('input[name="build"]:checked');
+    const care    = document.querySelector('input[name="care"]:checked');
+    const biz     = document.getElementById('fieldBiz').value.trim();
+    const name    = document.getElementById('fieldName').value.trim();
+    const phone   = document.getElementById('fieldPhone').value.trim();
+    const email   = document.getElementById('fieldEmail').value.trim();
+    const city    = document.getElementById('fieldCity').value.trim();
+    const website = document.getElementById('fieldWebsite').value.trim();
+    const notes   = document.getElementById('fieldNotes').value.trim();
+
+    const pathLabel = selectedPath === 'mockup'
+      ? 'Loved the mockup — paying now'
+      : 'Trust you — no mockup needed';
+
+    const subject = encodeURIComponent(
+      'New Order — ' + (build?.dataset.label || 'Pro Site') + ' — ' + biz
+    );
+    const bodyLines = [
+      'PATH: '       + pathLabel,
+      '',
+      'BUILD: '      + (build?.dataset.label || '') + ' ($' + (build?.dataset.price || '') + ' one-time)',
+      'CARE PLAN: '  + (care?.dataset.label || '')  + ' ($' + (care?.dataset.price || '') + '/mo)',
+      '',
+      'BUSINESS: '   + biz,
+      'CONTACT: '    + name,
+      'PHONE: '      + phone,
+      'EMAIL: '      + email,
+      city    ? 'CITY: '    + city    : '',
+      website ? 'WEBSITE: ' + website : '',
+      notes   ? 'NOTES: '   + notes   : '',
+    ].filter(Boolean);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    const gmailUrl =
+      'https://mail.google.com/mail/?view=cm&fs=1&to=summitwebsco@gmail.com&subject=' +
+      subject + '&body=' + body;
+
+    const stripeLink = build ? STRIPE_LINKS[build.value] : '';
+
+    if (stripeLink) {
+      // Open Gmail notification for the owner, then redirect customer to Stripe
+      window.open(gmailUrl, '_blank');
+      const sep = stripeLink.includes('?') ? '&' : '?';
+      window.location.href = stripeLink + sep + 'prefilled_email=' + encodeURIComponent(email);
+    } else {
+      // Stripe links not yet configured — fall back to Gmail inquiry
+      window.open(gmailUrl, '_blank');
+      const ctaBtn = document.getElementById('ctaBtn');
+      ctaBtn.innerHTML = '✓ Info sent — we\'ll follow up within 24 hours';
+      ctaBtn.style.pointerEvents = 'none';
+      ctaBtn.style.opacity = '0.75';
+      document.getElementById('ctaNoteText').textContent =
+        'Add your Stripe Payment Links in buy.html to enable direct checkout';
+    }
+  }
+  </script>
+</body>
+</html>
