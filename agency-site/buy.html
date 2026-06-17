@@ -1430,18 +1430,46 @@
 
     const stripeLink = build ? STRIPE_LINKS[build.value] : '';
 
+    // Disable button while submitting
+    const ctaBtn = document.getElementById('ctaBtn');
+    ctaBtn.style.pointerEvents = 'none';
+    ctaBtn.style.opacity = '0.7';
+
+    // 1. Submit lead to CRM (fire-and-forget — don't block on this)
+    fetch('/.netlify/functions/submit-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        business:     biz,
+        name,
+        phone,
+        email,
+        city,
+        website,
+        notes,
+        buildPackage: build?.dataset.label || '',
+        carePlan:     care?.dataset.label  || '',
+        path:         pathLabel,
+      }),
+    }).catch(() => {}); // silent fail — Gmail backup covers it
+
     if (stripeLink) {
-      // Open Gmail notification for the owner, then redirect customer to Stripe
-      window.open(gmailUrl, '_blank');
+      // 2a. Build client_reference_id so the webhook knows which care plan was chosen
+      // Format: "CarePlan|CarePrice|BuildPlan"
+      const clientRef = encodeURIComponent(
+        (care?.dataset.label || '') + '|' +
+        (care?.dataset.price || '') + '|' +
+        (build?.dataset.label || '')
+      );
       const sep = stripeLink.includes('?') ? '&' : '?';
-      window.location.href = stripeLink + sep + 'prefilled_email=' + encodeURIComponent(email);
+      window.location.href =
+        stripeLink +
+        sep + 'prefilled_email='      + encodeURIComponent(email) +
+        '&client_reference_id='       + clientRef;
     } else {
-      // Stripe links not yet configured — fall back to Gmail inquiry
+      // 2b. No Stripe link yet — open Gmail as fallback
       window.open(gmailUrl, '_blank');
-      const ctaBtn = document.getElementById('ctaBtn');
       ctaBtn.innerHTML = '✓ Info sent — we\'ll follow up within 24 hours';
-      ctaBtn.style.pointerEvents = 'none';
-      ctaBtn.style.opacity = '0.75';
       document.getElementById('ctaNoteText').textContent =
         'Add your Stripe Payment Links in buy.html to enable direct checkout';
     }
